@@ -1,0 +1,105 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "STORY": "Storia",
+    "EXPERIENCE": "Esperienza",
+    "MOMENTS": "Momenti",
+    "FAQ": "FAQ",
+    "CONTACT": "Contatti"
+  },
+  "HERO": {
+    "BOOKING-BTN": "Prenota",
+    "LOCATION-BTN": "Location",
+    "PAYOFF": "Dall'Alba al Tramonto"
+  },
+  "STORY": {
+    "TITLE": "La nostra storia",
+    "SUBTITLE": "Radicato in Calabria",
+    "TEXT1": "C'è un momento, sulla costa ionica della Calabria, in cui il fumo del braciere si mescola all'aria di mare. In cui il pranzo diventa aperitivo, e l'aperitivo diventa sera.",
+    "TEXT2": "Focu Meu nasce qui. A Sant'Andrea Apostolo dello Ionio, nel cuore della Calabria.",
+    "TEXT3": "È un ristorante e lido contemporaneo che racconta la cultura calabrese attraverso il fuoco, il cibo e il ritmo della costa. La cucina è radicata nella tradizione calabrese - cotture alla brace, ingredienti stagionali, sapori intensi del territorio - reinterpretata con uno sguardo moderno, senza perdere l'anima.",
+    "TEXT4": "Gli ospiti arrivano per mangiare. Restano per il resto.Il fuoco è acceso.",
+    "TEXT5": "Il fuoco è acceso. Un posto dove si torna, sulla costa ionica, Calabria."
+  },
+  "EXPERIENCE": {
+    "TITLE": "L'Esperienza",
+    "SUBTITLE1": "BAR",
+    "TEXT1": "Cocktail, vini calabresi e aperitivi artigianali. Pensati per pomeriggi lenti e tramonti sul mare Ionio.",
+    "SUBTITLE2": "Ristorante",
+    "TEXT2": "Cucina calabrese contemporanea: cottura alla brace, ingredienti stagionali e prodotti del territorio del Sud Italia. La tradizione, reinterpretata.",
+    "SUBTITLE3": "Atmosfera",
+    "TEXT3": "Musica, fuoco e ospitalità sul mare. Un'esperienza di condivisione sulla costa ionica della Calabria."
+  },
+  "MOMENTS": {
+    "TITLE": "Momenti",
+    "ALLERGENS-SUBTITLE": "Allergeni",
+    "ALLERGENS-TEXT": "Per informazioni su allergeni e intolleranze alimentari, invitiamo la gentile clientela a rivolgersi al personale di sala prima dell’ordinazione, ai sensi del Regolamento UE n. 1169/2011."
+  },
+  "FAQ": {
+    "TITLE": "FAQ",
+    "QUESTION1": "Dove si trova Focu Meu?",
+    "ANSWER1": "Focu Meu si trova a Sant'Andrea Apostolo dello Ionio Marina, sulla costa ionica della Calabria, a pochi minuti da Soverato, in provincia di Catanzaro.",
+    "QUESTION2": "Che tipo di cucina offre Focu Meu?",
+    "ANSWER2": "Cucina calabrese contemporanea: cotture alla brace, pesce fresco della costa ionica, ingredienti stagionali e prodotti selezionati dal territorio del Sud Italia.",
+    "QUESTION3": "È necessaria la prenotazione?",
+    "ANSWER3": "Durante la stagione estiva la prenotazione è consigliata, soprattutto per l'aperitivo al tramonto, la cena e i weekend sulla costa calabrese.",
+    "QUESTION4": "Focu Meu offre cocktail e aperitivo?",
+    "ANSWER4": "Sì. Cocktail artigianali, vini calabresi, spritz e aperitivo sono disponibili durante tutto il giorno e la sera, con vista sul mare Ionio.",
+    "QUESTION5": "È possibile organizzare eventi privati da Focu Meu?",
+    "ANSWER5": "Sì. Focu Meu ospita eventi privati, cene di gruppo e celebrazioni durante la stagione estiva. Contattaci per disponibilità e informazioni.",
+    "QUESTION6": "Focu Meu è vicino a Soverato?",
+    "ANSWER6": "Sì. Focu Meu si trova a pochi minuti da Soverato, lungo la costa ionica della Calabria, nel Sud Italia.",
+    "QUESTION7": "Focu Meu offre il brunch?",
+    "ANSWER7": "Sì. Focu Meu propone brunch sul mare durante la stagione estiva, sulla costa ionica della Calabria. La prenotazione è consigliata."
+  },
+  "CONTACTS": {
+    "TITLE": "Vieni a trovarci",
+    "SUBTITLE": "Dal brunch sul mare ai pranzi lenti, dall'aperitivo al tramonto fino alle cene estive sulla costa ionica della Calabria...",
+    "TEXT1": "Focu Meu unisce cucina calabrese contemporanea, cocktail, vini calabresi e l'energia della costa ionica in uno spazio pensato per pomeriggi lenti e lunghe serate sul mare Ionio... ",
+    "INFO-LABEL": "Indirizzo & Contatti",
+    "ADDRESS-LABEL": "Indirizzo",
+    "ADDRESS": "Via Raffaele Lombardi, 20 Sant'Andrea Apostolo dello Ionio 88060, CZ",
+    "CONTACT-LABEL": "Contatti",
+    "EMAIL": "info.focumeu@gmail.com",
+    "PHONE": "+39 351 6372505",
+    "SCHEDULE-LABEL": "Orari di apertura",
+    "BRUNCH": "Brunch",
+    "LUNCH": "Pranzo",
+    "APERITIF": "Aperitivi",
+    "DINNER": "Cena",
+    "SCHEDULE1": "Da Lunedì a Domenica",
+    "SCHEDULE2": "Dalle 08:00 fino a notte fonda"
+  },
+  "FOOTER": {
+    "TEXT": "Prenota il tuo tavolo e vivi l'estate sulla costa ionica della Calabria.",
+    "RIGHTS": "Tutti i diritti sono riservati",
+    "COOKIE-LINK": "Gestisci preferenze Cookie"
+  },
+  "SEO": {
+    "TITLE": "Focu Meu – Ristorante & Bar",
+    "DESCRIPTION": "Cucina calabrese, brace e aperitivi sul mar Ionio a Sant'Andrea Apostolo. A pochi minuti da Soverato. Aperto dall'alba a notte fonda.",
+    "KEYWORDS": "ristorante Sant'Andrea Apostolo dello Ionio, cucina calabrese, ristorante costa ionica, aperitivo tramonto Calabria, Focu Meu, vicino Soverato, brace pesce, brace carne",
+    "OG_TITLE": "Focu Meu – Dall'Alba al Tramonto sulla Costa Ionica",
+    "OG_DESCRIPTION": "Cucina calabrese, cocktail e brace sul mare Ionio. A Sant'Andrea Apostolo dello Ionio, pochi minuti da Soverato."
+  },
+  "COOKIES": {
+    "TITLE": "Questo sito utilizza i cookie",
+    "TEXT": "Utilizziamo cookie tecnici necessari al funzionamento del sito e, con il tuo consenso, cookie di profilazione per mostrarti contenuti e pubblicità personalizzati. Puoi accettarli tutti, rifiutarli o scegliere le tue preferenze.",
+    "LINK": "Personalizza le preferenze →",
+    "ACTION-BTN1": "Rifiuta tutto",
+    "ACTION-BTN2": "Accetta tutto",
+    "BACK-BTN": "Indietro",
+    "TITLE2": "Gestisci le preferenze",
+    "TEXT2": "Scegli quali categorie di cookie vuoi abilitare. I cookie necessari non possono essere disattivati.",
+    "NEEDED-COOKIE-TITLE": "Cookie necessari",
+    "NEEDED-COOKIE-DESCRIPTION": "Essenziali per il funzionamento del sito. Non possono essere disattivati.",
+    "NEEDED-COOKIE-LABEL": "sempre attivi",
+    "ANALYTICS-COOKIE-TITLE": "Cookie analitici",
+    "ANALYTICS-COOKIE-DESCRIPTION": "Ci aiutano a capire come gli utenti interagiscono con il sito (es. Google Analytics)",
+    "MARKETING-COOKIE-TITLE": "Cookie di marketing",
+    "MARKETING-COOKIE-DESCRIPTION": "Utilizzati per mostrarti pubblicità pertinenti (es. Meta Pixel, Facebook Ads).",
+    "SAVE-BTN": "Salva",
+    "DENIED-BTN": "Rifiuti",
+    "ACCEPT-BTN": "Accetta"
+  }
+}

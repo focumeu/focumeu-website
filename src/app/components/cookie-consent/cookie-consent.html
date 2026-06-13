@@ -1,0 +1,128 @@
+@if (visible) {
+<div
+  class="cc-backdrop"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Preferenze cookie"
+>
+  <div class="cc-panel" [class.cc-panel--details]="view === 'details'">
+    <!-- ── BANNER VIEW ── -->
+    @if (view === 'banner') {
+    <div class="cc-banner">
+      <div class="cc-icon-wrap"></div>
+
+      <div class="cc-content">
+        <h2 class="cc-title">{{'COOKIES.TITLE'| translate}}</h2>
+        <p class="cc-text">{{'COOKIES.TEXT'| translate}}</p>
+        <button class="cc-link" (click)="showDetails()">
+          {{'COOKIES.LINK'| translate}}
+        </button>
+      </div>
+
+      <div class="cc-actions">
+        <button class="cc-btn cc-btn--ghost" (click)="rejectAll()">
+          {{'COOKIES.ACTION-BTN1'| translate}}
+        </button>
+        <button class="cc-btn cc-btn--primary" (click)="acceptAll()">
+          {{'COOKIES.ACTION-BTN2'| translate}}
+        </button>
+      </div>
+    </div>
+    }
+
+    <!-- ── DETAILS VIEW ── -->
+    @if (view === 'details') {
+    <div class="cc-details">
+      <button class="cc-back" (click)="showBanner()">
+        <span>←</span> {{'COOKIES.BACK-BTN'| translate}}
+      </button>
+
+      <h2 class="cc-title">{{'COOKIES.TITLE2'| translate}}</h2>
+      <p class="cc-text">{{'COOKIES.TEXT2'| translate}}</p>
+
+      <div class="cc-categories">
+        <!-- Necessari -->
+        <div class="cc-category">
+          <div class="cc-category-header">
+            <div class="cc-category-info">
+              <span class="cc-category-name"
+                >{{'COOKIES.NEEDED-COOKIE-TITLE' | translate}}</span
+              >
+              <span class="cc-category-desc"
+                >{{'COOKIES.NEEDED-COOKIE-DESCRIPTION' | translate}}</span
+              >
+            </div>
+            <div class="cc-toggle cc-toggle--disabled">
+              <div class="cc-toggle-track cc-toggle-track--on">
+                <div class="cc-toggle-thumb"></div>
+              </div>
+              <span class="cc-toggle-label"
+                >{{'COOKIES.NEEDED-COOKIE-LABEL' | translate}}</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics -->
+        <div class="cc-category">
+          <div class="cc-category-header">
+            <div class="cc-category-info">
+              <span class="cc-category-name"
+                >{{'COOKIES.ANALTYTICS-COOKIE-TITLE'| translate}}</span
+              >
+              <span class="cc-category-desc"
+                >{{'COOKIES.ANALYTICS-COOKIE-DESCRIPTION' |translate}}</span
+              >
+            </div>
+            <label class="cc-toggle">
+              <input type="checkbox" [(ngModel)]="analytics" />
+              <div
+                class="cc-toggle-track"
+                [class.cc-toggle-track--on]="analytics"
+              >
+                <div class="cc-toggle-thumb"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="cc-category">
+          <div class="cc-category-header">
+            <div class="cc-category-info">
+              <span class="cc-category-name"
+                >{{'COOKIES.MARKETING-COOKIE-TITLE' | translate}}</span
+              >
+              <span class="cc-category-desc"
+                >{{'COOKIES.MARKETING-COOKIE-DESCRIPTION' | translate}}</span
+              >
+            </div>
+            <label class="cc-toggle">
+              <input type="checkbox" [(ngModel)]="marketing" />
+              <div
+                class="cc-toggle-track"
+                [class.cc-toggle-track--on]="marketing"
+              >
+                <div class="cc-toggle-thumb"></div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="cc-actions cc-actions--details">
+        <button class="cc-btn cc-btn--ghost" (click)="rejectAll()">
+          {{'COOKIES.DENIED-BTN' | translate}}
+        </button>
+        <button class="cc-btn cc-btn--secondary" (click)="saveCustom()">
+          {{'COOKIES.SAVE-BTN'| translate}}
+        </button>
+        <button class="cc-btn cc-btn--primary" (click)="acceptAll()">
+          {{'COOKIES.ACCEPT-BTN' | translate}}
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</div>
+}

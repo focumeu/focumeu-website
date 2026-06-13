@@ -1,0 +1,90 @@
+<section id="contact">
+  <h1 class="title">{{ 'CONTACTS.TITLE' | translate }}</h1>
+  <h4 class="subtitle">{{ 'CONTACTS.SUBTITLE' | translate }}</h4>
+
+  <div class="info-container">
+    <div class="info">
+      <h4 class="description">{{ 'CONTACTS.TEXT1' | translate }}</h4>
+      <div class="bold-line"></div>
+
+      <div class="info-box">
+        <p class="label">{{ 'CONTACTS.INFO-LABEL' | translate }}</p>
+
+        <div class="ac-box">
+          <div class="address-box">
+            <p class="sublabel">{{ 'CONTACTS.ADDRESS-LABEL' | translate }}</p>
+            <p class="custom-link">{{ 'CONTACTS.ADDRESS' | translate }}</p>
+          </div>
+
+          <div class="light-line"></div>
+
+          <div class="contact-box">
+            <p class="sublabel">{{ 'CONTACTS.CONTACT-LABEL' | translate }}</p>
+
+            <div class="contact-info">
+              <p>
+                <a
+                  class="custom-link"
+                  [href]="'mailto:' + ('CONTACTS.EMAIL' | translate)"
+                >
+                  {{ 'CONTACTS.EMAIL' | translate }}
+                </a>
+              </p>
+
+              <a
+                class="contact-link custom-link"
+                href="https://wa.me/393516372505?text=Ciao%20Focu%20Meu,%20vorrei%20ricevere%20informazioni."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p [innerHTML]="'CONTACTS.PHONE' | translate"></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bold-line"></div>
+
+      <div class="schedule-container">
+        <p class="label">{{ 'CONTACTS.SCHEDULE-LABEL' | translate }}</p>
+
+        <div class="schedule-box">
+          <div class="phases">
+            <p class="sublabel">{{ 'CONTACTS.BRUNCH' | translate }}</p>
+            <p class="sublabel">{{ 'CONTACTS.LUNCH' | translate }}</p>
+            <p class="sublabel">{{ 'CONTACTS.APERITIF' | translate }}</p>
+            <p class="sublabel">{{ 'CONTACTS.DINNER' | translate }}</p>
+          </div>
+
+          <div class="date-info">
+            <p class="custom-link">{{ 'CONTACTS.SCHEDULE1' | translate }}</p>
+            <p class="custom-link">{{ 'CONTACTS.SCHEDULE2' | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map" #mapContainer>
+      @if (mapLoaded) {
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.5863961579994!2d16.562564099999996!3d38.61238899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x136ab3aa1a5528a9%3A0xd4cab02430648472!2sFocu%20Meu!5e0!3m2!1sen!2sit!4v1779270963636!5m2!1sen!2sit"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+      } @else {
+      <div class="map-placeholder"></div>
+      }
+    </div>
+  </div>
+
+  <img
+    src="/assets/illustrations/wave.webp"
+    alt="background wave illustration"
+    loading="lazy"
+    class="wave"
+  />
+</section>

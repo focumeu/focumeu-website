@@ -1,0 +1,34 @@
+<!-- ═══ HERO OPZIONE B: fotografica con navbar integrata visivamente ═══ -->
+<section class="hero-fullscreen" id="hero">
+  <div class="hero-overlay"></div>
+  <img
+    src="/assets/images/sala.webp"
+    alt="Focu Meu restaurant"
+    class="hero-img"
+    loading="lazy"
+    priority
+  />
+  <div class="hero-content">
+    <p class="hero-payoff">{{ 'HERO.PAYOFF' | translate }}</p>
+    <div class="hero-buttons">
+      <a
+        class="hero-btn"
+        href="https://wa.me/393516372505"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="bookBtnClick()"
+      >
+        <p>{{ 'HERO.BOOKING-BTN' | translate }}</p>
+      </a>
+      <a
+        class="hero-btn"
+        href="https://www.google.com/maps/place/Focu+Meu/@38.612389,16.5625641,17z"
+        target="_blank"
+        rel="noopener noreferrer"
+        (click)="locationBtnClick()"
+      >
+        <p>{{ 'HERO.LOCATION-BTN' | translate }}</p>
+      </a>
+    </div>
+  </div>
+</section>

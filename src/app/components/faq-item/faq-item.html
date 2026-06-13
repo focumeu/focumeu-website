@@ -1,0 +1,7 @@
+<div class="faq-item">
+  <button class="faq-question" (click)="isOpen = !isOpen">
+    {{ question | translate }}
+    <span class="faq-icon" [class.open]="isOpen">&#x2304;</span>
+  </button>
+  <div class="faq-answer" [class.open]="isOpen">{{ answer | translate }}</div>
+</div>

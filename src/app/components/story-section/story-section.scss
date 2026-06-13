@@ -1,0 +1,182 @@
+#story {
+  height: 100dvh;
+  background-color: var(--color-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem;
+
+  .wave {
+    width: 2400px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.1;
+    animation: wave-motion 20s infinite;
+  }
+
+  .texts {
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    h1 {
+      font-family: "Ribes Black", sans-serif;
+      color: var(--color-orange);
+      font-size: 4.5rem;
+      text-transform: uppercase;
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      flex: 1;
+      gap: 2.5rem;
+
+      h4 {
+        font-family: "Staatliches", sans-serif;
+        font-size: 2rem;
+        font-weight: 400;
+        color: var(--color-chilli);
+        text-transform: uppercase;
+      }
+
+      p {
+        font-family: "Zalando Sans", sans-serif;
+        font-weight: 400;
+        font-size: 1.1rem;
+        text-align: justify;
+        line-height: 1.5;
+        color: var(--color-chilli);
+      }
+    }
+  }
+
+  .images {
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(2deg);
+
+    img {
+      width: 80%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+
+      padding: 24px 24px 80px 24px; // effetto polaroid
+      background: white;
+
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // ── Tablet (≤1024px) ──────────────────────────────────────────────────────
+
+  @media (max-width: 1024px) {
+    height: auto;
+    flex-direction: column;
+    padding: 4rem 2.5rem;
+    gap: 3rem;
+
+    .texts {
+      width: 100%;
+      height: auto;
+      gap: 2rem;
+
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      .description {
+        gap: 1.5rem;
+        justify-content: flex-start;
+
+        h4 {
+          font-size: 1.75rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .images {
+      width: 100%;
+      transform: none;
+
+      img {
+        width: 100%;
+        max-width: 800px;
+        aspect-ratio: 16 / 9;
+        height: auto;
+
+        padding: 0;
+        background: none;
+        outline: none;
+
+        object-fit: cover;
+      }
+    }
+  }
+
+  // ── Mobile (≤600px) ───────────────────────────────────────────────────────
+
+  @media (max-width: 600px) {
+    padding: 3rem 1.25rem;
+    gap: 2rem;
+
+    .wave {
+      width: 1800px;
+    }
+
+    .texts {
+      gap: 1.5rem;
+
+      h1 {
+        font-size: clamp(2.4rem, 8vw, 3.2rem);
+      }
+
+      .description {
+        gap: 1rem;
+
+        h4 {
+          font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+        }
+        p {
+          font-size: clamp(0.9rem, 3.2vw, 1rem);
+          text-align: left;
+        }
+      }
+    }
+
+    .images {
+      img {
+        aspect-ratio: 16 / 10;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes wave-motion {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 80px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

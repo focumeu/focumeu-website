@@ -1,0 +1,50 @@
+.back-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--color-butter);
+  background: var(--color-butter);
+  color: var(--color-chilli);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+
+  // Forza layer GPU isolato su Safari
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  isolation: isolate;
+
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    visibility 0s linear 0.15s;
+  visibility: hidden; // usa visibility invece di pointer-events per nascondere
+
+  svg {
+    width: 20px;
+    height: auto;
+    fill: var(--color-chilli);
+  }
+
+  &.visible {
+    opacity: 0.5;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+  }
+  &:hover {
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

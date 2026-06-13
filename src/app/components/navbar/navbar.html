@@ -1,0 +1,108 @@
+<nav
+  class="navbar"
+  [class.menu-open]="isMenuOpen"
+  [class.menu-open]="isMenuOpen"
+  [class.transparent]="isTransparent"
+>
+  <img src="logo_fm.webp" alt="Logo Focomeu" loading="lazy" class="logo" />
+
+  <!-- Hamburger button (tablet e mobile) -->
+  <button
+    class="hamburger"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="isMenuOpen"
+    aria-label="Toggle menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Desktop nav links -->
+  <section class="navlinks desktop-only">
+    <button (click)="scrollTo('hero')" class="navlink">
+      {{ 'NAV.HOME' | translate }}
+    </button>
+    <button (click)="scrollTo('story')" class="navlink">
+      {{ 'NAV.STORY' | translate }}
+    </button>
+    <button (click)="scrollTo('experience')" class="navlink">
+      {{ 'NAV.EXPERIENCE' | translate }}
+    </button>
+    <button (click)="scrollTo('moments')" class="navlink">
+      {{ 'NAV.MOMENTS' | translate }}
+    </button>
+    <button (click)="scrollTo('faq')" class="navlink">
+      {{ 'NAV.FAQ' | translate }}
+    </button>
+    <button (click)="scrollTo('contact')" class="navlink">
+      {{ 'NAV.CONTACT' | translate }}
+    </button>
+  </section>
+
+  <!-- Language switcher desktop (visibile solo su desktop) -->
+  <div class="lang-switcher desktop-only">
+    @for (lang of language.languages; track lang.code) {
+    <button
+      [class.active]="language.getCurrent() === lang.code"
+      (click)="language.setLanguage(lang.code)"
+      [title]="lang.label"
+    >
+      <img
+        [src]="'/assets/flags/' + lang.flag"
+        [alt]="lang.label"
+        width="24"
+        height="18"
+      />
+    </button>
+    }
+  </div>
+</nav>
+
+<!-- Fullscreen overlay menu -->
+<div
+  class="fullscreen-menu"
+  [class.open]="isMenuOpen"
+  (click)="closeOnBackdrop($event)"
+>
+  <div class="fullscreen-menu__inner">
+    <nav class="fullscreen-menu__links">
+      <button (click)="scrollToAndClose('home')" class="fullscreen-link">
+        {{ 'NAV.HOME' | translate }}
+      </button>
+      <button (click)="scrollToAndClose('story')" class="fullscreen-link">
+        {{ 'NAV.STORY' | translate }}
+      </button>
+      <button (click)="scrollToAndClose('experience')" class="fullscreen-link">
+        {{ 'NAV.EXPERIENCE' | translate }}
+      </button>
+      <button (click)="scrollToAndClose('moments')" class="fullscreen-link">
+        {{ 'NAV.MOMENTS' | translate }}
+      </button>
+      <button (click)="scrollToAndClose('faq')" class="fullscreen-link">
+        {{ 'NAV.FAQ' | translate }}
+      </button>
+      <button (click)="scrollToAndClose('contact')" class="fullscreen-link">
+        {{ 'NAV.CONTACT' | translate }}
+      </button>
+    </nav>
+
+    <!-- Language switcher nel menu mobile -->
+    <div class="lang-switcher mobile-lang">
+      @for (lang of language.languages; track lang.code) {
+      <button
+        [class.active]="language.getCurrent() === lang.code"
+        (click)="language.setLanguage(lang.code)"
+        [title]="lang.label"
+      >
+        <img
+          [src]="'/assets/flags/' + lang.flag"
+          [alt]="lang.label"
+          width="32"
+          height="24"
+        />
+      </button>
+      }
+    </div>
+  </div>
+</div>

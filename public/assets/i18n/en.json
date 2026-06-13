@@ -1,0 +1,105 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "STORY": "Story",
+    "EXPERIENCE": "Experience",
+    "MOMENTS": "Moments",
+    "FAQ": "FAQ",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "BOOKING-BTN": "Book",
+    "LOCATION-BTN": "Location",
+    "PAYOFF": "From Dawn to Dusk"
+  },
+  "STORY": {
+    "TITLE": "Our Story",
+    "SUBTITLE": "Rooted in Calabria",
+    "TEXT1": "There's a moment on the Ionian coast of Calabria when the smoke from the grill meets the sea air. When lunch becomes aperitivo, and aperitivo becomes evening.",
+    "TEXT2": "Focu Meu was born here. In Sant'Andrea Apostolo dello Ionio, in the heart of Calabria.",
+    "TEXT3": "A contemporary restaurant and lido telling the story of Calabria through fire, food and the rhythm of the coast. The kitchen is rooted in Calabrian tradition - woodfire grilling, seasonal ingredients, intense flavours of the territory - reinterpreted with a modern sensibility, without losing its soul.",
+    "TEXT4": "Guests come for the food. They stay for everything else.",
+    "TEXT5": "The fire is lit. A place you come back to, on the Ionian coast, Calabria."
+  },
+  "EXPERIENCE": {
+    "TITLE": "Experience",
+    "SUBTITLE1": "BAR",
+    "TEXT1": "Cocktails, Calabrian wines and artisan aperitivi. Made for slow afternoons and sunsets on the Ionian Sea.",
+    "SUBTITLE2": "Restaurant",
+    "TEXT2": "Contemporary Calabrian cuisine: woodfire grilling, seasonal ingredients and produce from Southern Italy. Tradition, reinterpreted.",
+    "SUBTITLE3": "Atmosphere",
+    "TEXT3": "Music, fire and coastal hospitality. A shared experience on the Ionian coast of Calabria."
+  },
+  "MOMENTS": {
+    "TITLE": "Moments",
+    "ALLERGENS-SUBTITLE": "Allergens",
+    "ALLERGENS-TEXT": "For information on allergens and food intolerances, we kindly ask guests to speak with a member of our team before ordering, in accordance with EU Regulation No. 1169/2011."
+  },
+  "FAQ": {
+    "TITLE": "FAQ",
+    "QUESTION1": "Where is Focu Meu located?",
+    "ANSWER1": "Focu Meu is located in Sant'Andrea Apostolo dello Ionio Marina, on the Ionian coast of Calabria, a few minutes from Soverato, in the province of Catanzaro, Southern Italy.",
+    "QUESTION2": "What kind of food does Focu Meu serve?",
+    "ANSWER2": "Contemporary Calabrian cuisine: woodfire grilling, fresh fish from the Ionian coast, seasonal ingredients and produce sourced from the territory of Southern Italy.",
+    "QUESTION3": "Do I need to book?",
+    "ANSWER3": " During the summer season, booking is recommended — especially for sunset aperitivo, dinner and weekends on the Calabrian coast.",
+    "QUESTION4": "Does Focu Meu serve cocktails and aperitivo?",
+    "ANSWER4": "Yes. Artisan cocktails, Calabrian wines, spritzes and aperitivo are available throughout the day and evening, with views over the Ionian Sea.",
+    "QUESTION5": "Can I organise a private event at Focu Meu?",
+    "ANSWER5": "Yes. Focu Meu hosts private events, group dinners and celebrations during the summer season. Get in touch for availability and details.",
+    "QUESTION6": "Is Focu Meu close to Soverato?",
+    "ANSWER6": "Yes. Focu Meu is just a few minutes from Soverato, along the Ionian coast of Calabria, Southern Italy.",
+    "QUESTION7": "Does Focu Meu serve brunch? ",
+    "ANSWER7": "Yes. Focu Meu offers brunch on the water during the summer season, on the Ionian coast of Calabria. Booking is recommended."
+  },
+  "CONTACTS": {
+    "TITLE": "Find Us",
+    "SUBTITLE": "From brunch on the water and long lunches, to sunset aperitivo and summer dinners on the Ionian coast of Calabria.",
+    "TEXT1": "Focu Meu brings together contemporary Calabrian cuisine, cocktails, Calabrian wines and the energy of the Ionian coast - a space made for slow afternoons and long evenings on the Ionian Sea.",
+    "INFO-LABEL": "Address and Contact details",
+    "ADDRESS-LABEL": "Address",
+    "ADDRESS": "Via Raffaele Lombardi, 20 Sant'Andrea Apostolo dello Ionio 88060, CZ",
+    "CONTACT-LABEL": "Contact",
+    "EMAIL": "info.focumeu@gmail.com",
+    "PHONE": "+39 351 6372505",
+    "SCHEDULE-LABEL": "Service Hours",
+    "BRUNCH": "Brunch",
+    "LUNCH": "Lunch",
+    "APERITIF": "Happy Hour",
+    "DINNER": "Dinner",
+    "SCHEDULE1": "Monday to Sunday",
+    "SCHEDULE2": "From 8AM until late at night"
+  },
+  "FOOTER": {
+    "TEXT": "Book your table and experience summer on the Ionian coast of Calabria.",
+    "RIGHTS": "All Rights Reserved.",
+    "COOKIE-LINK": "Manage Cookies Preference"
+  },
+  "SEO": {
+    "TITLE": "Focu Meu – Restaurant & Bar",
+    "DESCRIPTION": "Calabrian cuisine, grilled specialties, and aperitifs by the Ionian Sea in Sant'Andrea Apostolo. Just a few minutes from Soverato. Open from dawn until late at night.",
+    "KEYWORDS": "restaurant Sant'Andrea Apostolo dello Ionio, Calabrian cuisine, Ionian coast restaurant, Calabria sunset aperitif, Focu Meu, near Soverato, grilled fish, grilled meat",
+    "OG_TITLE": "Focu Meu – From Dawn to Dusk on the Ionian Coast",
+    "OG_DESCRIPTION": "Calabrian cuisine, cocktails, and grilled specialties by the Ionian Sea. In Sant'Andrea Apostolo dello Ionio, just minutes from Soverato."
+  },
+  "COOKIES": {
+    "TITLE": "This website uses cookies",
+    "TEXT": "We use technical cookies necessary for the proper functioning of the website and, with your consent, profiling cookies to show you personalized content and advertising. You can accept all cookies, reject them, or customize your preferences.",
+    "LINK": "Customize preferences →",
+    "ACTION-BTN1": "Reject all",
+    "ACTION-BTN2": "Accept all",
+    "BACK-BTN": "Back",
+    "TITLE2": "Manage preferences",
+    "TEXT2": "Choose which categories of cookies you would like to enable. Necessary cookies cannot be disabled.",
+    "NEEDED-COOKIE-TITLE": "Necessary cookies",
+    "NEEDED-COOKIE-DESCRIPTION": "Essential for the website to function properly. They cannot be disabled.",
+    "NEEDED-COOKIE-LABEL": "always active",
+    "ANALYTICS-COOKIE-TITLE": "Analytics cookies",
+    "ANALYTICS-COOKIE-DESCRIPTION": "Help us understand how users interact with the website (e.g. Google Analytics).",
+    "MARKETING-COOKIE-TITLE": "Marketing cookies",
+    "MARKETING-COOKIE-DESCRIPTION": "Used to show you relevant advertising (e.g. Meta Pixel, Facebook Ads).",
+    "SAVE-BTN": "Save",
+    "DENIED-BTN": "Reject",
+    "ACCEPT-BTN": "Accept"
+  }
+}

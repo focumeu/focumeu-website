@@ -1,0 +1,69 @@
+:root {
+  --color-chilli: #d24b1b;
+  --color-orange: #f68f42;
+  --color-butter: #f1d08d;
+  --color-sand: #f7ecdd;
+  --color-breeze: #92b7ca;
+  --color-deepocean: #204ecf;
+  --color-white: #ffffff;
+  --color-lightgrey: #f7f7f7;
+  --color-grey: #afafaf;
+  --color-darkgrey: #525252;
+  --color-black: #0c0c0c;
+}
+
+@font-face {
+  font-family: "Ribes Regular";
+  src: url("/assets/fonts/Ribes-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ribes Black";
+  src: url("/assets/fonts/Ribes-Black.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ribes Light";
+  src: url("/assets/fonts/Ribes-Light.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+body,
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ribes Regular", sans-serif;
+}
+
+html {
+  background-color: var(--color-sand);
+  width: 100dvw;
+  min-height: 100dvh;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Compensazione navbar fixed — aggiungere a ogni sezione con id
+#home,
+#story,
+#experience,
+#moments,
+#faq,
+#contact {
+  scroll-margin-top: 143px; // altezza approssimativa navbar desktop
+
+  @media (max-width: 1024px) {
+    scroll-margin-top: 127px; // navbar tablet/mobile
+  }
+}

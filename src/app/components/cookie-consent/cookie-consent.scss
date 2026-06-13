@@ -1,0 +1,323 @@
+// ─────────────────────────────────────────────
+//  Cookie Consent — Focu Meu brand style
+// ─────────────────────────────────────────────
+
+:host {
+  --cc-bg: var(--color-sand);
+  --cc-surface: var(--color-butter);
+  --cc-border: var(--color-butter);
+  --cc-text: var(--color-black);
+  --cc-text-muted: var(--color-darkgrey);
+  --cc-accent: var(--color-chilli);
+  --cc-accent-hover: var(--color-orange);
+  --cc-toggle-on: var(--color-chilli);
+  --cc-radius: 14px;
+  --cc-shadow:
+    0 24px 80px rgba(12, 12, 12, 0.15), 0 4px 16px rgba(12, 12, 12, 0.08);
+  --cc-font-display: "Ribes Regular", "Staatliches", sans-serif;
+  --cc-font-body: "Staatliches", sans-serif;
+  font-family: var(--cc-font-body);
+}
+
+// Backdrop
+.cc-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(12, 12, 12, 0.45);
+  backdrop-filter: blur(4px);
+  animation: cc-fade-in 0.25s ease;
+
+  @media (min-width: 640px) {
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 1.5rem;
+  }
+}
+
+@keyframes cc-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Panel
+.cc-panel {
+  background: var(--cc-bg);
+  border-radius: var(--cc-radius);
+  box-shadow: var(--cc-shadow);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  animation: cc-slide-up 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1.5px solid var(--cc-border);
+
+  &--details {
+    max-width: 520px;
+  }
+}
+
+@keyframes cc-slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// ── BANNER ──────────────────────────────────
+
+.cc-banner {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cc-title {
+  font-family: var(--cc-font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--cc-text);
+  margin: 0 0 0.25rem;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.cc-text {
+  font-family: var(--cc-font-body);
+  font-size: 1rem;
+  color: var(--cc-text-muted);
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.cc-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-top: 0.25rem;
+  font-family: var(--cc-font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--cc-accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-block;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--cc-accent-hover);
+  }
+}
+
+// ── ACTIONS ─────────────────────────────────
+
+.cc-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  &--details {
+    padding: 1rem 1.5rem 1.5rem;
+    background: var(--cc-surface);
+    border-top: 1.5px solid var(--cc-border);
+  }
+}
+
+.cc-btn {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--cc-font-body);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+
+  &--primary {
+    background: var(--cc-accent);
+    color: var(--color-white);
+
+    &:hover {
+      background: var(--cc-accent-hover);
+      transform: translateY(-1px);
+    }
+  }
+
+  &--secondary {
+    background: var(--color-white);
+    color: var(--cc-text);
+    border: 1.5px solid var(--cc-border);
+
+    &:hover {
+      border-color: var(--color-grey);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--cc-text-muted);
+    border: 1.5px solid var(--cc-border);
+
+    &:hover {
+      border-color: var(--color-grey);
+      color: var(--cc-text);
+    }
+  }
+}
+
+// ── DETAILS ─────────────────────────────────
+
+.cc-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.cc-back {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem 0;
+  font-family: var(--cc-font-body);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--cc-text-muted);
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--cc-accent);
+  }
+}
+
+.cc-details > .cc-title,
+.cc-details > .cc-text {
+  padding: 0 1.5rem;
+  margin-top: 0.75rem;
+}
+
+// ── CATEGORIES ──────────────────────────────
+
+.cc-categories {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0;
+}
+
+.cc-category {
+  padding: 0.9rem 1.5rem;
+  border-top: 1.5px solid var(--cc-border);
+
+  &:last-child {
+    border-bottom: 1.5px solid var(--cc-border);
+  }
+}
+
+.cc-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cc-category-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.cc-category-name {
+  font-family: var(--cc-font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--cc-text);
+  letter-spacing: 0.01em;
+}
+
+.cc-category-desc {
+  font-family: var(--cc-font-body);
+  font-size: 0.9rem;
+  color: var(--cc-text-muted);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+}
+
+// ── TOGGLE ──────────────────────────────────
+
+.cc-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  flex-shrink: 0;
+
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &--disabled {
+    cursor: default;
+  }
+}
+
+.cc-toggle-track {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--color-grey);
+  position: relative;
+  transition: background 0.25s;
+
+  &--on {
+    background: var(--cc-toggle-on);
+  }
+}
+
+.cc-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-white);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 1px 4px rgba(12, 12, 12, 0.2);
+
+  .cc-toggle-track--on & {
+    transform: translateX(20px);
+  }
+}
+
+.cc-toggle-label {
+  font-family: var(--cc-font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--cc-toggle-on);
+  white-space: nowrap;
+}

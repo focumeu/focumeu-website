@@ -1,0 +1,126 @@
+.hero-fullscreen {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.15) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0 1.5rem 5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-payoff {
+    color: var(--color-butter);
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1.15;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2.2rem;
+    border: 2px solid var(--color-sand);
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease;
+
+    p {
+      color: var(--color-sand);
+      font-size: 1.6rem;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: var(--color-butter);
+
+      p {
+        color: var(--color-butter);
+        transition: color 0.3s ease;
+      }
+    }
+  }
+
+  // ── Tablet ──────────────────────────────────────────────────────────────
+  @media (max-width: 1024px) {
+    .hero-payoff {
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+    }
+
+    .hero-btn {
+      padding: 0.75rem 1.8rem;
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  // ── Mobile ──────────────────────────────────────────────────────────────
+  @media (max-width: 600px) {
+    .hero-content {
+      padding: 0 1rem 4rem;
+      gap: 2rem;
+    }
+
+    .hero-buttons {
+      gap: 1rem;
+    }
+
+    .hero-btn {
+      padding: 0.7rem 1.5rem;
+
+      p {
+        font-size: clamp(1.2rem, 4vw, 1.4rem);
+      }
+    }
+  }
+}

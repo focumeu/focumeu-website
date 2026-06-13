@@ -1,0 +1,54 @@
+<footer>
+  <div class="footer-column footer-brand">
+    <img src="logo_fm.webp" alt="Logo Focu Meu" loading="lazy" class="logo" />
+
+    <p class="copyright">© {{ currentYear }} {{'FOOTER.RIGHTS' |translate}}.</p>
+  </div>
+
+  <div class="footer-column footer-message">
+    <span>{{ 'FOOTER.TEXT' | translate }}</span>
+
+    <button type="button" (click)="openCookieSettings()" class="cookies-btn">
+      {{'FOOTER.COOKIE-LINK' |translate}}
+    </button>
+  </div>
+
+  <div class="footer-column footer-links">
+    <div class="footer-column footer-socials">
+      <div class="socials">
+        <a
+          href="https://www.instagram.com/focumeu_it"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          (click)="socialIgClick()"
+        >
+          <!-- SVG Instagram -->
+          <svg viewBox="3 3 24.9 24.9" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z"
+            />
+            <path
+              d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z"
+            />
+          </svg>
+        </a>
+
+        <a
+          href="https://www.facebook.com/profile.php?id=61573220798900"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          (click)="socialFbClick()"
+        >
+          <!-- SVG Facebook -->
+          <svg viewBox="3 3 18 18" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

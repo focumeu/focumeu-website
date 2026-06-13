@@ -1,0 +1,195 @@
+#experience {
+  height: 100dvh;
+  background-color: var(--color-chilli);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+
+  .title {
+    font-family: "Ribes Black", sans-serif;
+    font-size: 5rem;
+    color: var(--color-butter);
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .services {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+    z-index: 2;
+
+    .bar,
+    .restaurant,
+    .atmosphere {
+      width: 33%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+
+      img {
+        width: 80%;
+        min-height: 340px;
+      }
+
+      .texts {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        min-height: 200px;
+
+        h4 {
+          font-family: "Staatliches", sans-serif;
+          color: var(--color-sand);
+          text-transform: uppercase;
+          font-size: 3rem;
+        }
+
+        p {
+          font-family: "Zalando Sans", sans-serif;
+          font-weight: 300;
+          color: var(--color-sand);
+          text-align: justify;
+          width: 90%;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    z-index: 1;
+    opacity: 0.2;
+    width: 2400px;
+    height: auto;
+    animation: wave-motion 20s infinite;
+  }
+
+  // ── Tablet (≤1024px) ──────────────────────────────────────────────────────
+
+  @media (max-width: 1024px) {
+    height: auto;
+    padding: 3rem 2rem;
+    gap: 2rem;
+
+    .title {
+      font-size: 3.8rem;
+    }
+
+    .services {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2.5rem;
+
+      .bar,
+      .restaurant,
+      .atmosphere {
+        width: 100%;
+        height: auto;
+        flex-direction: row; // immagine a sinistra, testo a destra
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+
+        img {
+          width: 180px;
+          min-height: unset;
+          height: 180px;
+          flex-shrink: 0;
+          object-fit: contain;
+        }
+
+        .texts {
+          min-height: unset;
+          align-items: flex-start;
+          flex: 1;
+
+          h4 {
+            font-size: 2.2rem;
+          }
+          p {
+            text-align: left;
+            width: 100%;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .wave {
+      width: 1600px;
+    }
+  }
+
+  // ── Mobile (≤600px) ───────────────────────────────────────────────────────
+
+  @media (max-width: 600px) {
+    padding: 2.5rem 1.25rem;
+    gap: 1.5rem;
+
+    .title {
+      font-size: clamp(2.6rem, 9vw, 3.4rem);
+    }
+
+    .services {
+      gap: 2rem;
+
+      .bar,
+      .restaurant,
+      .atmosphere {
+        flex-direction: column; // torna colonna su mobile stretto
+        align-items: center;
+        gap: 1rem;
+
+        img {
+          width: 60%;
+          height: auto;
+          min-height: unset;
+        }
+
+        .texts {
+          align-items: center;
+          text-align: center;
+
+          h4 {
+            font-size: clamp(1.8rem, 6vw, 2.4rem);
+          }
+          p {
+            text-align: center;
+            font-size: clamp(0.9rem, 3.2vw, 1rem);
+          }
+        }
+      }
+    }
+
+    .wave {
+      width: 1800px;
+    }
+  }
+}
+
+@keyframes wave-motion {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 80px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

@@ -1,0 +1,147 @@
+footer {
+  background-color: var(--color-chilli);
+  color: var(--color-sand);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 3rem;
+  padding: 3rem 4rem;
+
+  .footer-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // ───────────────────────────────
+  // BRAND
+  // ───────────────────────────────
+
+  .footer-brand {
+    align-items: flex-start;
+    gap: 1rem;
+
+    .logo {
+      max-width: 220px;
+      height: auto;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: var(--color-sand);
+      line-height: 1.6;
+    }
+  }
+
+  // ───────────────────────────────
+  // CENTER
+  // ───────────────────────────────
+
+  .footer-message {
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    span {
+      font-size: 1.5rem;
+      color: var(--color-butter);
+      max-width: 500px;
+    }
+
+    .cookies-btn {
+      font-family: "Staatliches", sans-serif;
+      background: transparent;
+      border: none;
+      color: var(--color-sand);
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-orange);
+      }
+    }
+  }
+
+  // ───────────────────────────────
+  // RIGHT
+  // ───────────────────────────────
+
+  .footer-socials {
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      fill: var(--color-butter);
+      width: 58px;
+      height: 58px;
+      display: block;
+
+      transition:
+        fill 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    a:hover svg {
+      fill: var(--color-orange);
+      transform: translateY(-2px);
+    }
+  }
+
+  // ───────────────────────────────
+  // TABLET
+  // ───────────────────────────────
+
+  @media (max-width: 1024px) {
+    padding: 2.5rem;
+
+    .footer-message span {
+      font-size: 1.2rem;
+    }
+
+    .logo {
+      max-width: 180px;
+    }
+  }
+
+  // ───────────────────────────────
+  // MOBILE
+  // ───────────────────────────────
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    .footer-brand,
+    .footer-message,
+    .footer-links {
+      align-items: center;
+    }
+
+    .quick-links {
+      align-items: center;
+    }
+
+    .footer-message span {
+      font-size: 1.1rem;
+    }
+
+    .logo {
+      max-width: 160px;
+    }
+  }
+}

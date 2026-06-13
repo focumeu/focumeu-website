@@ -1,0 +1,301 @@
+$breakpoint-tablet: 1024px;
+
+.navbar {
+  background-color: var(--color-sand);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1000;
+  padding-top: calc(2rem + env(safe-area-inset-top));
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease;
+
+  .logo {
+    max-width: 250px;
+    height: auto;
+    position: relative;
+    z-index: 1001; // sopra l'overlay
+  }
+
+  // Desktop nav links
+  .navlinks {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .navlink {
+      background: transparent;
+      border: none;
+      appearance: none;
+      -webkit-appearance: none;
+      touch-action: manipulation;
+
+      font-family: "Ribes Black", sans-serif;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: var(--color-orange);
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-chilli);
+        transition: 0.2s ease;
+      }
+    }
+  }
+
+  // Language switcher
+  .lang-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      &.active {
+        img {
+          outline: 2px solid var(--color-chilli);
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+
+  // Hamburger button
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    position: relative;
+    z-index: 1001;
+
+    span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: var(--color-orange);
+      border-radius: 2px;
+      transform-origin: center;
+      transition:
+        transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+        opacity 0.2s ease,
+        background-color 0.2s ease;
+    }
+  }
+
+  // Hamburger animato → X quando menu aperto
+  &.menu-open {
+    .hamburger {
+      span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: var(--color-chilli);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: var(--color-chilli);
+      }
+    }
+  }
+
+  // Utility classi visibilità
+  .desktop-only {
+    display: flex;
+  }
+
+  &.transparent {
+    background-color: transparent;
+
+    .navlinks {
+      .navlink {
+        color: var(--color-butter);
+
+        &:hover {
+          color: var(--color-chilli);
+        }
+      }
+    }
+
+    .hamburger span {
+      background-color: var(--color-butter);
+    }
+  }
+
+  // Ombra leggera quando opaca
+  &:not(.transparent) {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .logo {
+      max-width: 200px;
+    }
+    .desktop-only {
+      display: none !important;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+  }
+}
+
+// ─── Fullscreen overlay menu ───────────────────────────────────────────────
+
+.fullscreen-menu {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-sand);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100dvw;
+  height: 100dvh;
+
+  // stato iniziale: nascosto
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-12px);
+  transition:
+    opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+    visibility 0s linear 0.35s;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+    transition:
+      opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+      visibility 0s linear 0s;
+
+    // Animazione a cascata per i link
+    .fullscreen-link {
+      background: transparent;
+      border: none;
+      appearance: none;
+      -webkit-appearance: none;
+      touch-action: manipulation;
+
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: #{0.05s * $i};
+        }
+      }
+    }
+
+    .mobile-lang {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.38s;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+    padding: 6rem 2rem 3rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .fullscreen-link {
+    font-family: "Ribes Black", sans-serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    text-decoration: none;
+    color: var(--color-orange);
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    line-height: 1;
+
+    // stato iniziale per animazione entrata
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      color 0.2s ease;
+
+    &:hover,
+    &:active {
+      color: var(--color-chilli);
+    }
+  }
+
+  .mobile-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    // stato iniziale per animazione entrata
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.3s ease 0s,
+      transform 0.3s ease 0s;
+
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+
+      &.active {
+        img {
+          outline: 2px solid var(--color-chilli);
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+
+  // Mostrare solo su tablet e mobile
+  @media (min-width: 1025px) {
+    display: none !important;
+  }
+}

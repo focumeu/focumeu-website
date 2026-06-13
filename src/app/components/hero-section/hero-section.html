@@ -1,0 +1,60 @@
+<section class="container" id="hero">
+  <img
+    src="/assets/illustrations/wave.webp"
+    alt="background wave illustration"
+    loading="lazy"
+    class="wave"
+  />
+  <img
+    src="/assets/illustrations/swordfish_sand.webp"
+    alt="Swordfish illustration"
+    loading="lazy"
+    class="illustration"
+  />
+  <div class="buttons">
+    <div class="btn" (click)="bookBtnClick()">
+      <svg
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        viewBox="0 0 141.73 96.18"
+      >
+        <defs></defs>
+        <path
+          class="st0"
+          d="M139.95,55.97C134.4,33.5,99.16-.07,75.52,0c-17.11.99-22.78,23.9-40,26.09-11.69,1.04-28.53-5.97-35,7.63-7.12,36.36,61.19,88.42,86.32,47.45,3-4.36,5.53-11.08,11.66-11.58,12.87-1.17,28.23,18.67,39.45,10.46,5.71-4.65,3.75-17.77,2.02-24.08Z"
+        />
+      </svg>
+      <p>
+        <a
+          href="https://wa.me.3516372505"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ 'HERO.BOOKING-BTN' | translate }}</a
+        >
+      </p>
+    </div>
+    <div class="btn" (click)="locationBtnClick()">
+      <a
+        href="https://www.google.com/maps/place/Focu+Meu/@38.612389,16.5625641,17z/data=!4m6!3m5!1s0x136ab3aa1a5528a9:0xd4cab02430648472!8m2!3d38.612389!4d16.5625641!16s%2Fg%2F11zbgskymt?hl=en-GB&entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          viewBox="0 0 141.73 96.18"
+        >
+          <defs></defs>
+          <path
+            class="st0"
+            d="M139.95,55.97C134.4,33.5,99.16-.07,75.52,0c-17.11.99-22.78,23.9-40,26.09-11.69,1.04-28.53-5.97-35,7.63-7.12,36.36,61.19,88.42,86.32,47.45,3-4.36,5.53-11.08,11.66-11.58,12.87-1.17,28.23,18.67,39.45,10.46,5.71-4.65,3.75-17.77,2.02-24.08Z"
+          />
+        </svg>
+        <p>{{ 'HERO.LOCATION-BTN' | translate }}</p>
+      </a>
+    </div>
+  </div>
+  <p class="payoff">{{ 'HERO.PAYOFF' | translate }}</p>
+</section>

@@ -1,0 +1,288 @@
+#moments {
+  min-height: 100dvh;
+  background-color: var(--color-sand);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem;
+
+  .wave {
+    width: 2400px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.1;
+    animation: wave-motion 20s infinite;
+  }
+
+  .title {
+    width: 100%;
+    font-family: "Ribes Black", sans-serif;
+    font-size: 5rem;
+    color: var(--color-orange);
+    text-transform: uppercase;
+    text-align: start;
+    z-index: 2;
+  }
+
+  // ── Polaroid stack (mobile/tablet) ────────────────────────────────────────
+  .polaroid-stack {
+    position: relative;
+    width: min(260px, 80vw);
+    height: min(320px, 70vw);
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .polaroid {
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    padding: 12px 12px 48px;
+    box-shadow: 4px 6px 24px rgba(0, 0, 0, 0.18);
+    transform: rotate(var(--rot));
+    transition: transform 0.15s ease;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    &.exit {
+      animation: polaroid-exit 0.45s cubic-bezier(0.4, 0, 0.8, 0.6) forwards;
+    }
+
+    img {
+      width: 100%;
+      height: calc(100% - 48px);
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      display: block;
+      text-align: center;
+      font-family: "Staatliches", sans-serif;
+      font-size: 1.2rem;
+      color: var(--color-chilli);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-top: 10px;
+    }
+  }
+
+  // ── Dots ──────────────────────────────────────────────────────────────────
+  .dots {
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-chilli);
+      opacity: 0.3;
+      cursor: pointer;
+      transition:
+        opacity 0.3s,
+        transform 0.3s;
+
+      &.active {
+        opacity: 1;
+        transform: scale(1.35);
+      }
+    }
+  }
+
+  // ── Testo ─────────────────────────────────────────────────────────────────
+  .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    z-index: 2;
+    border-top: 2px solid var(--color-chilli);
+    padding-top: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+
+    h4 {
+      font-family: "Staatliches", sans-serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--color-chilli);
+      text-transform: uppercase;
+    }
+
+    p {
+      font-family: "Zalando Sans", sans-serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--color-chilli);
+      text-align: center;
+    }
+  }
+
+  // ── Desktop: polaroid sparse come su un tavolo ────────────────────────────
+  @media (min-width: 1025px) {
+    .polaroid-stack {
+      width: 100%;
+      max-width: 1200px;
+      height: 640px;
+      cursor: default;
+    }
+
+    .polaroid {
+      position: absolute;
+      inset: unset;
+      width: 300px;
+      height: 360px; // proporzione polaroid: foto quadrata + strip sotto
+      padding: 14px 14px 24px;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+      z-index: 2 !important;
+
+      &:hover {
+        transform: rotate(calc(var(--rot) * 0.4)) scale(1.08) !important;
+        box-shadow: 10px 14px 36px rgba(0, 0, 0, 0.26);
+        z-index: 10 !important;
+      }
+
+      img {
+        width: 100%;
+        height: calc(100% - 52px); // tutta l'area meno la strip caption
+        object-fit: cover;
+      }
+
+      &:nth-child(1) {
+        top: 40px;
+        left: 2%;
+        --rot: -7deg;
+      }
+      &:nth-child(2) {
+        top: 90px;
+        left: 20%;
+        --rot: 5deg;
+      }
+      &:nth-child(3) {
+        top: 20px;
+        left: 38%;
+        --rot: -3deg;
+      }
+      &:nth-child(4) {
+        top: 80px;
+        left: 57%;
+        --rot: 8deg;
+      }
+      &:nth-child(5) {
+        top: 30px;
+        left: 75%;
+        --rot: -6deg;
+      }
+
+      &.exit {
+        animation: none;
+        opacity: 1;
+      }
+      &.active {
+        z-index: 2 !important;
+      }
+    }
+
+    .dots {
+      display: none;
+    }
+  }
+
+  // ── Tablet ────────────────────────────────────────────────────────────────
+  @media (max-width: 1024px) {
+    padding: 3rem 2rem;
+    gap: 1.75rem;
+
+    .title {
+      font-size: 3.8rem;
+    }
+    .polaroid-stack {
+      width: 300px;
+      height: 360px;
+    }
+    .polaroid img {
+      height: 260px;
+    }
+    .texts {
+      h4 {
+        font-size: 1.75rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .wave {
+      width: 2000px;
+    }
+  }
+
+  // ── Mobile ────────────────────────────────────────────────────────────────
+  @media (max-width: 600px) {
+    padding: 2.5rem 1.25rem;
+    gap: 1.5rem;
+
+    .title {
+      font-size: clamp(2.6rem, 9vw, 3.4rem);
+    }
+    .polaroid-stack {
+      width: 240px;
+      height: 300px;
+    }
+    .polaroid {
+      padding: 8px 8px 40px;
+      img {
+        height: 210px;
+      }
+    }
+    .texts {
+      h4 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+      }
+      p {
+        font-size: clamp(0.85rem, 3vw, 1rem);
+      }
+    }
+    .wave {
+      width: 1800px;
+    }
+  }
+}
+
+// ── Animazioni ────────────────────────────────────────────────────────────────
+@keyframes polaroid-exit {
+  0% {
+    transform: rotate(var(--rot)) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(calc(var(--rot) + 25deg)) translateX(120%)
+      translateY(-40px) scale(0.85);
+    opacity: 0;
+  }
+}
+
+@keyframes wave-motion {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 80px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "NAV": {
+    "HOME": "Accueil",
+    "STORY": "Histoire",
+    "EXPERIENCE": "Expérience",
+    "MOMENTS": "Moments",
+    "FAQ": "FAQ",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "BOOKING-BTN": "Réserver",
+    "LOCATION-BTN": "Emplacement",
+    "PAYOFF": "De l'Aube au Coucher du Soleil"
+  },
+  "STORY": {
+    "TITLE": "Notre Histoire",
+    "SUBTITLE": "Ancré en Calabre",
+    "TEXT1": "Il y a un moment, sur la côte ionienne de Calabre, où la fumée du grill se mêle à l'air marin. Où le déjeuner devient apéritivo, et l'apéritivo devient soirée.",
+    "TEXT2": "Focu Meu est né ici. À Sant'Andrea Apostolo dello Ionio, au cœur de la Calabre.",
+    "TEXT3": "Un restaurant et lido contemporain qui raconte la Calabre à travers le feu, la cuisine et le rythme de la côte. Une cuisine ancrée dans la tradition calabraise - grill au bois, produits saisonniers, saveurs intenses du territoire - réinterprétée avec sensibilité, sans jamais perdre son âme.",
+    "TEXT4": "Les hôtes arrivent pour manger. Ils restent pour le reste.",
+    "TEXT5": "Le feu est allumé. Un endroit où l'on revient, sur la côte ionienne, Calabre."
+  },
+  "EXPERIENCE": {
+    "TITLE": "L'Expérience",
+    "SUBTITLE1": "BAR",
+    "TEXT1": "Cocktails, vins calabrais et apéritifs artisanaux. Pensés pour les après-midis lents et les couchers de soleil sur la mer Ionienne.",
+    "SUBTITLE2": "Restaurant",
+    "TEXT2": "Cuisine calabraise contemporaine : grill au bois, produits saisonniers et ingrédients du Sud de l'Italie. La tradition, réinterprétée.",
+    "SUBTITLE3": "Atmosphère",
+    "TEXT3": "Musique, feu et hospitalité côtière. Une expérience de partage sur la côte ionienne de Calabre."
+  },
+  "MOMENTS": {
+    "TITLE": "Moments",
+    "ALLERGENS-SUBTITLE": "Allergènes",
+    "ALLERGENS-TEXT": "Pour toute information concernant les allergènes et les intolérances alimentaires, nous invitons nos clients à s'adresser au personnel de salle avant de passer leur commande, conformément au Règlement UE n° 1169/2011."
+  },
+  "FAQ": {
+    "TITLE": "FAQ",
+    "QUESTION1": "Où se trouve Focu Meu?",
+    "ANSWER1": "Focu Meu se trouve à Sant'Andrea Apostolo dello Ionio Marina, sur la côte ionienne de Calabre, à quelques minutes de Soverato, dans la province de Catanzaro, au Sud de l'Italie.",
+    "QUESTION2": "Quel type de cuisine propose Focu Meu?",
+    "ANSWER2": "Une cuisine calabraise contemporaine : cuissons au grill au bois, poisson frais de la côte ionienne, produits saisonniers et ingrédients sélectionnés du territoire du Sud de l'Italie.",
+    "QUESTION3": "Est-il nécessaire de réserver?",
+    "ANSWER3": "Pendant la saison estivale, la réservation est conseillée — surtout pour l'apéritivo au coucher du soleil, le dîner et les week-ends sur la côte calabraise.",
+    "QUESTION4": "Focu Meu propose-t-il des cocktails et un apéritivo?",
+    "ANSWER4": "Oui. Cocktails artisanaux, vins calabrais, spritzes et apéritivo sont disponibles tout au long de la journée et en soirée, avec vue sur la mer Ionienne.",
+    "QUESTION5": "Est-il possible d'organiser un événement privé chez Focu Meu?",
+    "ANSWER5": "Oui. Focu Meu accueille des événements privés, des dîners de groupe et des célébrations pendant la saison estivale. Contactez-nous pour la disponibilité et les informations.",
+    "QUESTION6": "Focu Meu est-il proche de Soverato?",
+    "ANSWER6": "Oui. Focu Meu se trouve à quelques minutes de Soverato, le long de la côte ionienne de Calabre, au Sud de l'Italie.",
+    "QUESTION7": "Focu Meu propose-t-il un brunch?",
+    "ANSWER7": "Oui. Focu Meu propose un brunch face à la mer pendant la saison estivale, sur la côte ionienne de Calabre. La réservation est conseillée."
+  },
+  "CONTACTS": {
+    "TITLE": "Venez Nous Trouver",
+    "SUBTITLE": "Du brunch face à la mer aux longs déjeuners, de l'apéritivo au coucher du soleil jusqu'aux dîners estivaux sur la côte ionienne de Calabre.",
+    "TEXT1": "Focu Meu réunit cuisine calabraise contemporaine, cocktails, vins calabrais et l'énergie de la côte ionienne - un espace pensé pour les après-midis lents et les longues soirées sur la mer Ionienne.",
+    "INFO-LABEL": "Adresse et coordonnées",
+    "ADDRESS-LABEL": "Adresse",
+    "ADDRESS": "Via Raffaele Lombardi, 20 Sant'Andrea Apostolo dello Ionio 88060, CZ",
+    "CONTACT-LABEL": "Contact",
+    "EMAIL": "info.focumeu@gmail.com",
+    "PHONE": "+39 351 6372505",
+    "SCHEDULE-LABEL": "Horaires de service",
+    "BRUNCH": "Brunch",
+    "LUNCH": "Déjeuner",
+    "APERITIF": "Apéritif",
+    "DINNER": "Dîner",
+    "SCHEDULE1": "Du lundi au dimanche",
+    "SCHEDULE2": "De 8h jusqu’à tard dans la nuit"
+  },
+  "FOOTER": {
+    "TEXT": "Réservez votre table et vivez l'été sur la côte ionienne de Calabre.",
+    "RIGHTS": "Tous droits réservés",
+    "COOKIE-LINK": "Gérer les préférences relatives aux cookies"
+  },
+  "SEO": {
+    "TITLE": "Focu Meu – Restaurant & Bar",
+    "DESCRIPTION": "Cuisine calabraise, grillades et apéritifs au bord de la mer Ionienne à Sant'Andrea Apostolo. À quelques minutes de Soverato. Ouvert de l’aube jusqu’à tard dans la nuit.",
+    "KEYWORDS": "restaurant Sant'Andrea Apostolo dello Ionio, cuisine calabraise, restaurant côte ionienne, apéritif coucher de soleil Calabre, Focu Meu, près de Soverato, grillades de poisson, grillades de viande",
+    "OG_TITLE": "Focu Meu – De l’Aube au Crépuscule sur la Côte Ionienne",
+    "OG_DESCRIPTION": "Cuisine calabraise, cocktails et grillades au bord de la mer Ionienne. À Sant'Andrea Apostolo dello Ionio, à quelques minutes de Soverato."
+  },
+  "COOKIES": {
+    "TITLE": "Ce site utilise des cookies",
+    "TEXT": "Nous utilisons des cookies techniques nécessaires au bon fonctionnement du site et, avec votre consentement, des cookies de profilage pour vous proposer des contenus et des publicités personnalisés. Vous pouvez tous les accepter, les refuser ou personnaliser vos préférences.",
+    "LINK": "Personnaliser les préférences →",
+    "ACTION-BTN1": "Tout refuser",
+    "ACTION-BTN2": "Tout accepter",
+    "BACK-BTN": "Retour",
+    "TITLE2": "Gérer les préférences",
+    "TEXT2": "Choisissez les catégories de cookies que vous souhaitez activer. Les cookies nécessaires ne peuvent pas être désactivés.",
+    "NEEDED-COOKIE-TITLE": "Cookies nécessaires",
+    "NEEDED-COOKIE-DESCRIPTION": "Essentiels au fonctionnement du site. Ils ne peuvent pas être désactivés.",
+    "NEEDED-COOKIE-LABEL": "toujours actifs",
+    "ANALYTICS-COOKIE-TITLE": "Cookies analytiques",
+    "ANALYTICS-COOKIE-DESCRIPTION": "Ils nous aident à comprendre comment les utilisateurs interagissent avec le site (ex. Google Analytics).",
+    "MARKETING-COOKIE-TITLE": "Cookies marketing",
+    "MARKETING-COOKIE-DESCRIPTION": "Utilisés pour vous proposer des publicités pertinentes (ex. Meta Pixel, Facebook Ads).",
+    "SAVE-BTN": "Enregistrer",
+    "DENIED-BTN": "Refuser",
+    "ACCEPT-BTN": "Accepter"
+  }
+}

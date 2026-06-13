@@ -1,0 +1,39 @@
+<section id="moments">
+  <h1 class="title">{{'MOMENTS.TITLE' | translate}}</h1>
+
+  <div class="polaroid-stack" (click)="!isDesktop && next()">
+    @for (dish of dishes; track dish.name; let i = $index) {
+    <div
+      class="polaroid"
+      [class.active]="i === current"
+      [class.exit]="i === exiting"
+      [style.--rot]="rotations[i] + 'deg'"
+      [style.z-index]="getZ(i)"
+    >
+      <img [src]="dish.image" [alt]="dish.name" loading="lazy" />
+      <!-- <span class="caption">{{ dish.description }}</span> -->
+    </div>
+    }
+  </div>
+
+  <div class="dots">
+    @for (dish of dishes; track $index) {
+    <span
+      class="dot"
+      [class.active]="$index === current"
+      (click)="goTo($index, $event)"
+    ></span>
+    }
+  </div>
+  <!-- 
+  <div class="texts">
+    <h4>{{'MOMENTS.ALLERGENS-SUBTITLE' | translate}}</h4>
+    <p class="allergens">{{'MOMENTS.ALLERGENS-TEXT' | translate}}</p>
+  </div> -->
+
+  <img
+    src="/assets/illustrations/wave.webp"
+    alt="background wave illustration"
+    class="wave"
+  />
+</section>
