@@ -45,10 +45,20 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
+            "buildTarget": "focumeu:build:development",
             "host": "0.0.0.0",
             "port": 4200,
             "allowedHosts": ["*"]
-          }
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "focumeu:build:production"
+            },
+            "development": {
+              "buildTarget": "focumeu:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
         },
 
         "extract-i18n": {
