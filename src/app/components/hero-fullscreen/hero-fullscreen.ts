@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { MetaPixelService } from '../../services/meta-pixel.service';
 
 @Component({
   selector: 'app-hero-fullscreen',
-  imports: [TranslateModule],
+  imports: [TranslatePipe],
   templateUrl: './hero-fullscreen.html',
   styleUrl: './hero-fullscreen.scss',
 })

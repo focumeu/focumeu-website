@@ -7,11 +7,11 @@ import {
   PLATFORM_ID,
   inject,
 } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-moments-section',
-  imports: [TranslateModule, CommonModule],
+  imports: [TranslatePipe, CommonModule],
   templateUrl: './moments-section.html',
   styleUrl: './moments-section.scss',
 })

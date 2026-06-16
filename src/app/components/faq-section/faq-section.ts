@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { FaqItem } from '../faq-item/faq-item';
 
 @Component({
   selector: 'app-faq-section',
-  imports: [TranslateModule, FaqItem],
+  imports: [TranslatePipe, FaqItem],
   templateUrl: './faq-section.html',
   styleUrl: './faq-section.scss',
 })

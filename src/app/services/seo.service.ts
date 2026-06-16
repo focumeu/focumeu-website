@@ -26,7 +26,7 @@ export class SeoService {
 
   /** Chiama questo ad ogni cambio lingua */
   updateForCurrentLang(): void {
-    const lang = this.translate.currentLang ?? this.translate.defaultLang;
+    const lang = this.translate.currentLang() ?? 'it';
 
     this.translate
       .get([

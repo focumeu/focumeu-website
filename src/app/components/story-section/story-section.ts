@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-story-section',
-  imports: [TranslateModule],
+  imports: [TranslatePipe],
   templateUrl: './story-section.html',
   styleUrl: './story-section.scss',
 })

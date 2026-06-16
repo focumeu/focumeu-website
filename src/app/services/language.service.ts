@@ -34,7 +34,7 @@ export class LanguageService {
     }
   }
 
-  getCurrent() {
-    return this.translate.currentLang;
+  getCurrent(): string {
+    return this.translate.currentLang() ?? 'it';
   }
 }

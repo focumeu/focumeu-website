@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { CookieConsentService } from '../../services/cookie-consent.service';
 import { MetaPixelService } from '../../services/meta-pixel.service';
 
 @Component({
   selector: 'app-footer',
-  imports: [TranslateModule],
+  imports: [TranslatePipe],
   templateUrl: './footer.html',
   styleUrl: './footer.scss',
 })

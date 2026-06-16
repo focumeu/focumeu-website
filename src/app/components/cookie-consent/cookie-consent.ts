@@ -13,14 +13,14 @@ import {
   CookieConsentService,
   CookiePreferences,
 } from '../../services/cookie-consent.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 type PanelView = 'banner' | 'details';
 
 @Component({
   selector: 'app-cookie-consent',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule],
+  imports: [CommonModule, FormsModule, TranslatePipe],
   templateUrl: './cookie-consent.html',
   styleUrls: ['./cookie-consent.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
