@@ -18,8 +18,8 @@
     "TEXT1": "C'è un momento, sulla costa ionica della Calabria, in cui il fumo del braciere si mescola all'aria di mare. In cui il pranzo diventa aperitivo, e l'aperitivo diventa sera.",
     "TEXT2": "Focu Meu nasce qui. A Sant'Andrea Apostolo dello Ionio, nel cuore della Calabria.",
     "TEXT3": "È un ristorante e lido contemporaneo che racconta la cultura calabrese attraverso il fuoco, il cibo e il ritmo della costa. La cucina è radicata nella tradizione calabrese - cotture alla brace, ingredienti stagionali, sapori intensi del territorio - reinterpretata con uno sguardo moderno, senza perdere l'anima.",
-    "TEXT4": "Gli ospiti arrivano per mangiare. Restano per il resto.Il fuoco è acceso.",
-    "TEXT5": "Il fuoco è acceso. Un posto dove si torna, sulla costa ionica, Calabria."
+    "TEXT4": "Gli ospiti arrivano per mangiare. Restano per il resto.",
+    "TEXT5": "Il fuoco è acceso. Un posto dove si torna, sulla costa Ionica, Calabria."
   },
   "EXPERIENCE": {
     "TITLE": "L'Esperienza",
@@ -28,7 +28,7 @@
     "SUBTITLE2": "Ristorante",
     "TEXT2": "Cucina calabrese contemporanea: cottura alla brace, ingredienti stagionali e prodotti del territorio del Sud Italia. La tradizione, reinterpretata.",
     "SUBTITLE3": "Atmosfera",
-    "TEXT3": "Musica, fuoco e ospitalità sul mare. Un'esperienza di condivisione sulla costa ionica della Calabria."
+    "TEXT3": "Musica, fuoco e ospitalità sul mare. Un'esperienza di condivisione sulla costa Ionica della Calabria."
   },
   "MOMENTS": {
     "TITLE": "Momenti",
@@ -40,7 +40,7 @@
     "QUESTION1": "Dove si trova Focu Meu?",
     "ANSWER1": "Focu Meu si trova a Sant'Andrea Apostolo dello Ionio Marina, sulla costa ionica della Calabria, a pochi minuti da Soverato, in provincia di Catanzaro.",
     "QUESTION2": "Che tipo di cucina offre Focu Meu?",
-    "ANSWER2": "Cucina calabrese contemporanea: cotture alla brace, pesce fresco della costa ionica, ingredienti stagionali e prodotti selezionati dal territorio del Sud Italia.",
+    "ANSWER2": "Cucina calabrese contemporanea: cotture alla brace, pesce fresco della costa Ionica, ingredienti stagionali e prodotti selezionati dal territorio del Sud Italia.",
     "QUESTION3": "È necessaria la prenotazione?",
     "ANSWER3": "Durante la stagione estiva la prenotazione è consigliata, soprattutto per l'aperitivo al tramonto, la cena e i weekend sulla costa calabrese.",
     "QUESTION4": "Focu Meu offre cocktail e aperitivo?",
@@ -48,9 +48,11 @@
     "QUESTION5": "È possibile organizzare eventi privati da Focu Meu?",
     "ANSWER5": "Sì. Focu Meu ospita eventi privati, cene di gruppo e celebrazioni durante la stagione estiva. Contattaci per disponibilità e informazioni.",
     "QUESTION6": "Focu Meu è vicino a Soverato?",
-    "ANSWER6": "Sì. Focu Meu si trova a pochi minuti da Soverato, lungo la costa ionica della Calabria, nel Sud Italia.",
+    "ANSWER6": "Sì. Focu Meu si trova a pochi minuti da Soverato, lungo la costa Ionica della Calabria, nel Sud Italia.",
     "QUESTION7": "Focu Meu offre il brunch?",
-    "ANSWER7": "Sì. Focu Meu propone brunch sul mare durante la stagione estiva, sulla costa ionica della Calabria. La prenotazione è consigliata."
+    "ANSWER7": "Sì. Focu Meu propone brunch sul mare durante la stagione estiva, sulla costa Ionica della Calabria. La prenotazione è consigliata.",
+    "QUESTION8": "È possibile visionare il menù?",
+    "ANSWER8": "La nostra cucina segue il ritmo del mare. Poiché lavoriamo con pescato del giorno e materie prime fresche, il menù varia frequentemente. Per questo abbiamo scelto di non pubblicare una carta fissa sul sito. Vi aspettiamo da Focu Meu per scoprire le proposte del giorno."
   },
   "CONTACTS": {
     "TITLE": "Vieni a trovarci",
@@ -71,7 +73,7 @@
     "SCHEDULE2": "Dalle 08:00 fino a notte fonda"
   },
   "FOOTER": {
-    "TEXT": "Prenota il tuo tavolo e vivi l'estate sulla costa ionica della Calabria.",
+    "TEXT": "Prenota il tuo tavolo e vivi l'estate sulla costa Ionica della Calabria.",
     "RIGHTS": "Tutti i diritti sono riservati",
     "COOKIE-LINK": "Gestisci preferenze Cookie"
   },

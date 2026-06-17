@@ -213,6 +213,21 @@ $breakpoint-tablet: 1024px;
       }
     }
 
+    .booking-btn {
+      font-family: "Ribes", sans-serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      background-color: var(--color-chilli);
+      border: none;
+      padding: 0.4rem 1rem;
+      border-radius: 16px;
+
+      a {
+        text-decoration: none;
+        color: var(--color-sand);
+      }
+    }
+
     .mobile-lang {
       opacity: 1;
       transform: translateY(0);
