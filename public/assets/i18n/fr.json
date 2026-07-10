@@ -56,7 +56,7 @@
   },
   "CONTACTS": {
     "TITLE": "Venez Nous Trouver",
-    "SUBTITLE": "Du brunch face à la mer aux longs déjeuners, de l'apéritivo au coucher du soleil jusqu'aux dîners estivaux sur la côte ionienne de Calabre.",
+    "SUBTITLE": "Du petit-déjeuner face à la mer aux longs déjeuners, de l'apéritivo au coucher du soleil jusqu'aux dîners estivaux sur la côte ionienne de Calabre.",
     "TEXT1": "Focu Meu réunit cuisine calabraise contemporaine, cocktails, vins calabrais et l'énergie de la côte ionienne - un espace pensé pour les après-midis lents et les longues soirées sur la mer Ionienne.",
     "INFO-LABEL": "Adresse et coordonnées",
     "ADDRESS-LABEL": "Adresse",
@@ -65,7 +65,7 @@
     "EMAIL": "info.focumeu@gmail.com",
     "PHONE": "+39 351 6372505",
     "SCHEDULE-LABEL": "Horaires de service",
-    "BRUNCH": "Brunch",
+    "BRUNCH": "Petit-déjeuner",
     "LUNCH": "Déjeuner",
     "APERITIF": "Apéritif",
     "DINNER": "Dîner",
