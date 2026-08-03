@@ -1,0 +1,187 @@
+<div class="popup-overlay" (click)="close()" role="presentation">
+  <div
+    class="popup-container"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="ferragosto-title"
+    (click)="$event.stopPropagation()"
+  >
+    <button
+      type="button"
+      class="close-button"
+      aria-label="Chiudi popup"
+      (click)="close()"
+    >
+      ✕
+    </button>
+
+    <header class="popup-header">
+      <span class="event-date"> 15 Agosto 2026 </span>
+
+      <h2 id="ferragosto-title">Ferragosto vista mare</h2>
+
+      <p class="title-en">Ferragosto by the Sea</p>
+
+      <p class="subtitle">Festeggia Ferragosto con il nostro menù speciale.</p>
+
+      <p class="subtitle-en">Celebrate Ferragosto with our special menu.</p>
+
+      <div class="menu-description">
+        <span class="it">
+          Il menù comprende la scelta di un antipasto, un primo e un secondo.
+        </span>
+
+        <span class="en">
+          The menu includes your choice of one starter, one first course and one
+          main course.
+        </span>
+      </div>
+    </header>
+
+    <section class="menu-section">
+      <h3>
+        Antipasti
+        <span>Starters</span>
+      </h3>
+
+      <ul>
+        <li>
+          <span class="it">Impepata di cozze</span>
+          <span class="en">Peppered Mussels</span>
+        </li>
+
+        <li>
+          <span class="it">Insalata di mare</span>
+          <span class="en">Seafood Salad</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <h3>
+        Primi
+        <span>First Courses</span>
+      </h3>
+
+      <ul>
+        <li>
+          <span class="it">Spaghetti alle alici</span>
+          <span class="en">Spaghetti with Anchovies</span>
+        </li>
+
+        <li>
+          <span class="it"> Paccheri al pesce spada, menta e pomodorini </span>
+
+          <span class="en">
+            Paccheri with Swordfish, Mint and Cherry Tomatoes
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <h3>
+        Secondi
+        <span>Main Courses</span>
+      </h3>
+
+      <ul>
+        <li>
+          <span class="it"> Trancio di pesce spada alla griglia </span>
+
+          <span class="en"> Grilled Swordfish Steak </span>
+        </li>
+
+        <li>
+          <span class="it"> Frittura di calamari </span>
+
+          <span class="en"> Fried Squid </span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="menu-section">
+      <h3>
+        Contorno
+        <span>Side Dish</span>
+      </h3>
+
+      <ul>
+        <li>
+          <span class="it"> Insalata fresca di stagione </span>
+
+          <span class="en"> Fresh Seasonal Salad </span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="extra-info">
+      <div class="info-item">
+        <span class="it">
+          Una bottiglia di vino della casa ogni 4 persone
+        </span>
+
+        <span class="en"> One bottle of house wine for every 4 guests </span>
+      </div>
+
+      <div class="info-item">
+        <span class="it"> Coperto incluso </span>
+
+        <span class="en"> Cover charge included </span>
+      </div>
+
+      <div class="info-item">
+        <span class="it"> Bevande escluse </span>
+
+        <span class="en"> Drinks not included </span>
+      </div>
+
+      <div class="info-item">
+        <span class="it"> Pranzo 12:00 - 16:00 </span>
+
+        <span class="en"> Lunch from 12:00 PM to 4:00 PM </span>
+      </div>
+
+      <div class="info-item">
+        <span class="it"> Cena dalle 20:00 </span>
+
+        <span class="en"> Dinner from 8:00 PM </span>
+      </div>
+    </section>
+
+    <div class="price">
+      <span class="amount"> €50 </span>
+
+      <span class="per-person"> a persona </span>
+
+      <span class="per-person-en"> per person </span>
+    </div>
+
+    <footer class="popup-footer">
+      <div>
+        <span class="it"> Prenotazione obbligatoria </span>
+
+        <span class="en"> Reservation required </span>
+      </div>
+
+      <div>
+        <span class="it"> Posti limitati </span>
+
+        <span class="en"> Limited availability </span>
+      </div>
+
+      <div>
+        <span class="it"> Durata del tavolo: 90 minuti </span>
+
+        <span class="en"> Table time: 90 minutes </span>
+      </div>
+    </footer>
+
+    <div class="actions">
+      <button class="primary-button" (click)="close()">
+        Ho capito
+        <span>I understand</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MetaPixelService } from '../../services/meta-pixel.service';
+import { FerragostoPopup } from '../ferragosto-popup/ferragosto-popup';
 
 @Component({
   selector: 'app-hero-fullscreen',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, FerragostoPopup],
   templateUrl: './hero-fullscreen.html',
   styleUrl: './hero-fullscreen.scss',
 })
@@ -21,5 +22,11 @@ export class HeroFullscreen {
     this.metaPixel.trackEvent('Lead', {
       content_name: 'Hero Fullscreen - Directions',
     });
+  }
+
+  showFerragostoPopup = signal(true);
+
+  closeFerragostoPopup() {
+    this.showFerragostoPopup.set(false);
   }
 }

@@ -32,3 +32,8 @@
     </div>
   </div>
 </section>
+@if(showFerragostoPopup()) {
+
+<app-ferragosto-popup (closed)="closeFerragostoPopup()"> </app-ferragosto-popup>
+
+}
