@@ -23,7 +23,7 @@
 
   overflow-y: auto;
 
-  background: #fdf7ef;
+  background: var(--color-sand);
   border-radius: 20px;
 
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
@@ -47,7 +47,7 @@
   border-radius: 50%;
 
   background: #d24b1b;
-  color: white;
+  color: var(--color-white);
 
   cursor: pointer;
 
@@ -70,7 +70,7 @@
   display: inline-block;
 
   background: #d24b1b;
-  color: white;
+  color: var(--color-white);
 
   padding: 0.4rem 1rem;
 
@@ -203,7 +203,7 @@
 .info-item {
   padding: 1rem;
 
-  background: white;
+  background: var(--color-white);
 
   border-left: 4px solid #d24b1b;
 
@@ -317,7 +317,7 @@
 
   background: #d24b1b;
 
-  color: white;
+  color: var(--color-white);
 
   cursor: pointer;
 
@@ -371,7 +371,7 @@
 @media (max-width: 768px) {
   .popup-container {
     padding: 1.5rem;
-    max-height: 95vh;
+    max-height: 95dvh;
   }
 
   .popup-header h2 {
