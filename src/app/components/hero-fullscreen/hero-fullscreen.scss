@@ -21,38 +21,154 @@
     position: absolute;
     inset: 0;
     z-index: 1;
+
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.65) 0%,
-      rgba(0, 0, 0, 0.15) 50%,
-      rgba(0, 0, 0, 0) 100%
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.35) 50%,
+      rgba(0, 0, 0, 0.15) 100%
     );
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5rem;
-    padding: 0 1.5rem 5rem;
+
     width: 100%;
+    max-width: 1000px;
+
+    padding: 0 1.5rem 5rem;
+
     text-align: center;
   }
 
+  // ═══════════════════════════════════════════════════════════════════
+  // CHIUSURA STAGIONE
+  // ═══════════════════════════════════════════════════════════════════
+
+  .season-closed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    max-width: 850px;
+
+    gap: 1.25rem;
+  }
+
   .hero-payoff {
+    margin: 0;
+
     color: var(--color-butter);
+
     font-size: clamp(2rem, 5vw, 4.5rem);
     line-height: 1.15;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
   }
+
+  .season-message {
+    max-width: 750px;
+
+    margin: 0;
+
+    color: var(--color-sand);
+
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.55;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .season-social {
+    max-width: 650px;
+
+    margin: 0.5rem 0 0;
+
+    color: var(--color-sand);
+
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.5;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .social-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin-top: 0.5rem;
+
+    flex-wrap: wrap;
+  }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 150px;
+
+    padding: 0.75rem 1.75rem;
+
+    border: 2px solid var(--color-sand);
+    border-radius: 100px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    color: var(--color-sand);
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+      background 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    span {
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: var(--color-butter);
+      color: var(--color-butter);
+
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-butter);
+      outline-offset: 4px;
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
+  // BOOKING — utilizzato dalla prossima stagione
+  // ═══════════════════════════════════════════════════════════════════
 
   .hero-buttons {
     display: flex;
+
     gap: 1.5rem;
+
     justify-content: center;
     align-items: center;
+
     flex-wrap: wrap;
   }
 
@@ -60,19 +176,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 0.85rem 2.2rem;
+
     border: 2px solid var(--color-sand);
     border-radius: 100px;
+
     background: rgba(255, 255, 255, 0.08);
+
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+
     cursor: pointer;
     text-decoration: none;
+
     transition:
       background 0.3s ease,
       border-color 0.3s ease;
 
     p {
+      margin: 0;
+
       color: var(--color-sand);
       font-size: 1.6rem;
       white-space: nowrap;
@@ -89,10 +213,17 @@
     }
   }
 
-  // ── Tablet ──────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════════
+  // TABLET
+  // ═══════════════════════════════════════════════════════════════════
+
   @media (max-width: 1024px) {
     .hero-payoff {
       font-size: clamp(1.8rem, 4.5vw, 3rem);
+    }
+
+    .season-message {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
     }
 
     .hero-btn {
@@ -104,11 +235,45 @@
     }
   }
 
-  // ── Mobile ──────────────────────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════════════
+  // MOBILE
+  // ═══════════════════════════════════════════════════════════════════
+
   @media (max-width: 600px) {
     .hero-content {
       padding: 0 1rem 4rem;
-      gap: 2rem;
+    }
+
+    .season-closed {
+      gap: 1rem;
+    }
+
+    .hero-payoff {
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .season-message {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    .season-social {
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .social-buttons {
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    .social-btn {
+      min-width: 135px;
+      padding: 0.65rem 1.4rem;
+
+      span {
+        font-size: 1.05rem;
+      }
     }
 
     .hero-buttons {

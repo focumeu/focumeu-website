@@ -10,7 +10,12 @@
   "HERO": {
     "BOOKING-BTN": "Réserver",
     "LOCATION-BTN": "Emplacement",
-    "PAYOFF": "De l'Aube au Coucher du Soleil"
+    "PAYOFF": "De l'Aube au Coucher du Soleil",
+    "SEASON-CLOSED": {
+      "TITLE": "Merci d’avoir partagé cette saison avec nous!",
+      "MESSAGE": "La saison estivale de Focu Meu s’achève ici. Un grand merci à tous ceux qui nous ont choisis, qui sont venus nous rendre visite et qui ont partagé cet été avec nous.",
+      "SOCIAL-TEXT": "Nous faisons une petite pause, mais nous continuerons à vous raconter ce qui se prépare. Suivez-nous sur les réseaux sociaux pour rester informés de la prochaine saison."
+    }
   },
   "STORY": {
     "TITLE": "Notre Histoire",

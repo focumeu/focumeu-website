@@ -10,7 +10,12 @@
   "HERO": {
     "BOOKING-BTN": "Book",
     "LOCATION-BTN": "Location",
-    "PAYOFF": "From Dawn to Dusk"
+    "PAYOFF": "From Dawn to Dusk",
+    "SEASON-CLOSED": {
+      "TITLE": "Thank you for sharing this season with us!",
+      "MESSAGE": "The Focu Meu summer season comes to an end here. A heartfelt thank you to everyone who chose us, came to visit and shared this summer with us.",
+      "SOCIAL-TEXT": "We are taking a little break, but we will keep sharing what’s coming next. Follow us on social media to stay updated on the next season."
+    }
   },
   "STORY": {
     "TITLE": "Our Story",

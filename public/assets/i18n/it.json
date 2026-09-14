@@ -10,7 +10,12 @@
   "HERO": {
     "BOOKING-BTN": "Prenota",
     "LOCATION-BTN": "Location",
-    "PAYOFF": "Dall'Alba al Tramonto"
+    "PAYOFF": "Dall'Alba al Tramonto",
+    "SEASON-CLOSED": {
+      "TITLE": "Grazie per questa stagione insieme!",
+      "MESSAGE": "La stagione estiva di Focu Meu si conclude qui. Grazie di cuore a tutti voi che ci avete scelto, che siete passati a trovarci e che avete condiviso con noi questa estate.",
+      "SOCIAL-TEXT": "Ci prendiamo una pausa, ma continueremo a raccontarvi tutto quello che verrà. Seguiteci sui social per rimanere aggiornati sulla prossima stagione."
+    }
   },
   "STORY": {
     "TITLE": "La nostra storia",
