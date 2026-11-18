@@ -1,195 +1,105 @@
-#experience {
-  height: 100dvh;
-  background-color: var(--color-chilli);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 3rem;
-  position: relative;
-  overflow: hidden;
+// Fondo Deep Ocean come il post "An authentic Calabrian experience" del brand kit
+.experience {
+  padding-block: var(--section-y);
+  background: var(--color-deepocean);
+  color: var(--color-sand);
 
-  .title {
-    font-family: "Ribes Black", sans-serif;
-    font-size: 5rem;
-    color: var(--color-butter);
-    text-transform: uppercase;
-    z-index: 2;
-  }
-
-  .services {
-    width: 100%;
+  &__head {
     display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex: 1;
-    z-index: 2;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
 
-    .bar,
-    .restaurant,
-    .atmosphere {
-      width: 33%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-
-      img {
-        width: 80%;
-        min-height: 340px;
-      }
-
-      .texts {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 1rem;
-        min-height: 200px;
-
-        h4 {
-          font-family: "Staatliches", sans-serif;
-          color: var(--color-sand);
-          text-transform: uppercase;
-          font-size: 3rem;
-        }
-
-        p {
-          font-family: "Zalando Sans", sans-serif;
-          font-weight: 300;
-          color: var(--color-sand);
-          text-align: justify;
-          width: 90%;
-          font-size: 1.1rem;
-        }
-      }
+    .eyebrow {
+      color: var(--color-breeze);
     }
   }
 
-  .wave {
-    position: absolute;
-    top: -100px;
-    left: -100px;
-    z-index: 1;
-    opacity: 0.2;
-    width: 2400px;
-    height: auto;
-    animation: wave-motion 20s infinite;
-  }
-
-  // ── Tablet (≤1024px) ──────────────────────────────────────────────────────
-
-  @media (max-width: 1024px) {
-    height: auto;
-    padding: 3rem 2rem;
-    gap: 2rem;
-
-    .title {
-      font-size: 3.8rem;
-    }
-
-    .services {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 2.5rem;
-
-      .bar,
-      .restaurant,
-      .atmosphere {
-        width: 100%;
-        height: auto;
-        flex-direction: row; // immagine a sinistra, testo a destra
-        justify-content: flex-start;
-        align-items: center;
-        gap: 2rem;
-
-        img {
-          width: 180px;
-          min-height: unset;
-          height: 180px;
-          flex-shrink: 0;
-          object-fit: contain;
-        }
-
-        .texts {
-          min-height: unset;
-          align-items: flex-start;
-          flex: 1;
-
-          h4 {
-            font-size: 2.2rem;
-          }
-          p {
-            text-align: left;
-            width: 100%;
-            font-size: 1rem;
-          }
-        }
-      }
-    }
-
-    .wave {
-      width: 1600px;
-    }
-  }
-
-  // ── Mobile (≤600px) ───────────────────────────────────────────────────────
-
-  @media (max-width: 600px) {
-    padding: 2.5rem 1.25rem;
-    gap: 1.5rem;
-
-    .title {
-      font-size: clamp(2.6rem, 9vw, 3.4rem);
-    }
-
-    .services {
-      gap: 2rem;
-
-      .bar,
-      .restaurant,
-      .atmosphere {
-        flex-direction: column; // torna colonna su mobile stretto
-        align-items: center;
-        gap: 1rem;
-
-        img {
-          width: 60%;
-          height: auto;
-          min-height: unset;
-        }
-
-        .texts {
-          align-items: center;
-          text-align: center;
-
-          h4 {
-            font-size: clamp(1.8rem, 6vw, 2.4rem);
-          }
-          p {
-            text-align: center;
-            font-size: clamp(0.9rem, 3.2vw, 1rem);
-          }
-        }
-      }
-    }
-
-    .wave {
-      width: 1800px;
-    }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1rem, 2vw, 1.75rem);
+    list-style: none;
   }
 }
 
-@keyframes wave-motion {
-  0% {
-    transform: translate(0, 0);
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  border: 1.5px solid color-mix(in srgb, var(--color-sand) 22%, transparent);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-sand) 4%, transparent);
+  transition:
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.5s var(--ease-out);
+
+  &:hover {
+    background: color-mix(in srgb, var(--color-sand) 9%, transparent);
+    border-color: color-mix(in srgb, var(--color-sand) 45%, transparent);
+
+    .card__illo {
+      transform: rotate(-4deg) scale(1.04);
+    }
   }
-  50% {
-    transform: translate(10px, 80px);
+
+  &__num {
+    font-family: var(--font-label);
+    font-size: var(--fs-md);
+    letter-spacing: 0.14em;
+    color: var(--color-breeze);
   }
-  100% {
-    transform: translate(0, 0);
+
+  &__illo {
+    width: 100%;
+    max-width: 260px;
+    aspect-ratio: 1;
+    margin: 0.5rem auto 1rem;
+    --illo-color: var(--color-butter);
+    transition: transform 0.6s var(--ease-out);
+  }
+
+  &__title {
+    font-family: var(--font-brand);
+    font-weight: 400;
+    font-size: var(--fs-xl);
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-sand);
+  }
+
+  &__text {
+    color: color-mix(in srgb, var(--color-sand) 85%, transparent);
+    text-wrap: pretty;
+  }
+}
+
+// Tablet: scorrimento orizzontale con "anteprima" della card successiva
+@media (max-width: 900px) {
+  .experience__list {
+    display: flex;
+    gap: 1rem;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .card {
+    flex: 0 0 min(78vw, 360px);
+    scroll-snap-align: start;
+
+    &__illo {
+      max-width: 190px;
+    }
   }
 }

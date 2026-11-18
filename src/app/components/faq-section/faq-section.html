@@ -1,26 +1,36 @@
-<section id="faq">
-  <h1 class="title">{{'FAQ.TITLE' | translate}}</h1>
-  <div class="QA-container">
-    <app-faq-item question="FAQ.QUESTION1" answer="FAQ.ANSWER1" />
-    <app-faq-item question="FAQ.QUESTION2" answer="FAQ.ANSWER2" />
-    <app-faq-item question="FAQ.QUESTION3" answer="FAQ.ANSWER3" />
-    <app-faq-item question="FAQ.QUESTION4" answer="FAQ.ANSWER4" />
-    <app-faq-item question="FAQ.QUESTION5" answer="FAQ.ANSWER5" />
-    <app-faq-item question="FAQ.QUESTION6" answer="FAQ.ANSWER6" />
-    <!-- <app-faq-item question="FAQ.QUESTION7" answer="FAQ.ANSWER7" /> -->
-    <app-faq-item question="FAQ.QUESTION8" answer="FAQ.ANSWER8" />
-  </div>
+<section id="faq" class="faq wave-bg">
+  <div class="container faq__grid">
+    <header class="faq__head">
+      <p class="eyebrow" appReveal>{{ 'FAQ.EYEBROW' | translate }}</p>
+      <h2 class="section-title" appReveal>{{ 'FAQ.TITLE' | translate }}</h2>
+      <p class="faq__intro" appReveal>{{ 'FAQ.INTRO' | translate }}</p>
 
-  <img
-    src="/assets/illustrations/sardines_sand.webp"
-    alt="Sardines doodle illustration"
-    loading="lazy"
-    class="illustration"
-  />
-  <img
-    src="/assets/illustrations/wave.webp"
-    alt="background wave illustration"
-    class="wave"
-    loading="lazy"
-  />
+      <div class="faq__more" appReveal>
+        <p>{{ 'FAQ.MORE' | translate }}</p>
+        <a
+          class="btn btn--light"
+          href="https://wa.me/393516372505?text=Ciao%20Focu%20Meu,%20vorrei%20ricevere%20informazioni."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ 'FAQ.MORE-CTA' | translate }}
+        </a>
+      </div>
+
+      <span
+        class="illo faq__illo"
+        style="--illo: url(/assets/illustrations/sardines_sand-560.webp)"
+        aria-hidden="true"
+      ></span>
+    </header>
+
+    <div class="faq__list" appReveal>
+      @for (n of questions; track n) {
+      <app-faq-item
+        [question]="'FAQ.QUESTION' + n"
+        [answer]="'FAQ.ANSWER' + n"
+      />
+      }
+    </div>
+  </div>
 </section>

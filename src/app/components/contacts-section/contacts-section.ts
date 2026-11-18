@@ -1,42 +1,37 @@
-// contacts-section.ts
-import {
-  Component,
-  ElementRef,
-  ViewChild,
-  AfterViewInit,
-  PLATFORM_ID,
-  inject,
-} from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, inject, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+import { RevealDirective } from '../../shared/reveal.directive';
+import { AnalyticsService } from '../../services/analytics.service';
+import { MetaPixelService } from '../../services/meta-pixel.service';
 
 @Component({
   selector: 'app-contacts-section',
-  imports: [CommonModule, TranslatePipe],
+  imports: [TranslatePipe, RevealDirective],
   templateUrl: './contacts-section.html',
   styleUrl: './contacts-section.scss',
 })
-export class ContactsSection implements AfterViewInit {
-  private platformId = inject(PLATFORM_ID);
-  mapLoaded = false;
+export class ContactsSection {
+  private analytics = inject(AnalyticsService);
+  private metaPixel = inject(MetaPixelService);
 
-  @ViewChild('mapContainer') mapContainer!: ElementRef;
+  readonly directionsUrl =
+    "https://www.google.com/maps/dir/?api=1&destination=Focu+Meu+Sant'Andrea+Apostolo+dello+Ionio";
 
-  ngAfterViewInit() {
-    if (!isPlatformBrowser(this.platformId)) return;
+  /**
+   * La mappa Google (pesante e con cookie di terze parti) viene
+   * caricata solo quando l'utente la richiede.
+   */
+  mapLoaded = signal(false);
 
-    console.log('mapContainer:', this.mapContainer);
+  loadMap(): void {
+    this.mapLoaded.set(true);
+    this.track('map_load');
+  }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          this.mapLoaded = true;
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '200px' },
-    );
-
-    observer.observe(this.mapContainer.nativeElement);
+  track(event: string): void {
+    this.analytics.trackEvent(event, { location: 'contacts' });
+    if (event !== 'map_load') {
+      this.metaPixel.trackEvent('Contact', { content_name: `Contacts - ${event}` });
+    }
   }
 }

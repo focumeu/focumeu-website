@@ -1,103 +1,82 @@
 import { isPlatformBrowser } from '@angular/common';
-import { CommonModule } from '@angular/common';
 import {
   Component,
   HostListener,
-  Inject,
   OnDestroy,
   PLATFORM_ID,
+  inject,
 } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule, RouterModule, TranslatePipe],
+  imports: [TranslatePipe],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
 export class Navbar implements OnDestroy {
-  isMenuOpen = false;
-  isTransparent = true;
-  private isBrowser: boolean;
-  private scrollY = 0;
+  readonly language = inject(LanguageService);
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  constructor(
-    private translate: TranslateService,
-    public language: LanguageService,
-    @Inject(PLATFORM_ID) platformId: object,
-  ) {
-    this.isBrowser = isPlatformBrowser(platformId);
-  }
+  readonly links = [
+    { id: 'story', label: 'NAV.STORY' },
+    { id: 'experience', label: 'NAV.EXPERIENCE' },
+    { id: 'moments', label: 'NAV.MOMENTS' },
+    { id: 'faq', label: 'NAV.FAQ' },
+    { id: 'contact', label: 'NAV.CONTACT' },
+  ];
+
+  isMenuOpen = false;
+  /** trasparente sopra la hero, piena dopo un po' di scroll */
+  isTransparent = true;
+  /** nascosta scorrendo verso il basso, riappare scorrendo verso l'alto */
+  isHidden = false;
+
+  private lastY = 0;
+  private ticking = false;
 
   ngOnDestroy(): void {
-    this.unlockScroll();
+    this.setScrollLock(false);
   }
 
   @HostListener('window:scroll')
   onScroll(): void {
-    if (!this.isBrowser) return;
-    this.isTransparent = window.scrollY < 80;
+    if (!this.isBrowser || this.ticking) return;
+    this.ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      this.isTransparent = y < 80;
+      this.isHidden = y > 400 && y > this.lastY;
+      this.lastY = y;
+      this.ticking = false;
+    });
   }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
-    this.isMenuOpen ? this.lockScroll() : this.unlockScroll();
+    this.setScrollLock(this.isMenuOpen);
   }
 
   closeMenu(): void {
+    if (!this.isMenuOpen) return;
     this.isMenuOpen = false;
-    this.unlockScroll();
-  }
-
-  closeOnBackdrop(event: MouseEvent): void {
-    // Chiude solo se il click è sul backdrop (non sui figli)
-    if ((event.target as HTMLElement).classList.contains('fullscreen-menu')) {
-      this.closeMenu();
-    }
-  }
-
-  scrollTo(sectionId: string): void {
-    if (!this.isBrowser) return;
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  scrollToAndClose(sectionId: string): void {
-    this.closeMenu();
-    setTimeout(() => this.scrollTo(sectionId), 350);
+    this.setScrollLock(false);
   }
 
   @HostListener('document:keydown.escape')
   onEscape(): void {
-    if (this.isMenuOpen) {
-      this.closeMenu();
-    }
+    this.closeMenu();
   }
 
-  private lockScroll(): void {
-    if (!this.isBrowser) return;
-    this.scrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${this.scrollY}px`;
-    document.body.style.width = '100%';
-    document.body.style.overflow = 'hidden';
+  @HostListener('window:resize')
+  onResize(): void {
+    // passando a desktop il menu mobile non serve più
+    if (this.isBrowser && window.innerWidth > 1024) this.closeMenu();
   }
 
-  private unlockScroll(): void {
+  private setScrollLock(lock: boolean): void {
     if (!this.isBrowser) return;
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    document.body.style.overflow = '';
-    window.scrollTo(0, this.scrollY);
-
-    // Forza il re-check dei listener di scroll
-    setTimeout(() => {
-      window.dispatchEvent(new Event('scroll'));
-    }, 50);
+    document.documentElement.style.overflow = lock ? 'hidden' : '';
   }
 }

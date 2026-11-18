@@ -1,8 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from './services/language.service';
 import { SeoService } from './services/seo.service';
-import { TranslateService } from '@ngx-translate/core';
+import { AnalyticsService } from './services/analytics.service';
+import { MetaPixelService } from './services/meta-pixel.service';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +13,16 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrl: './app.scss',
 })
 export class App {
-  protected title = 'Focumeu - Ristorante & Bar';
-
+  private languageService = inject(LanguageService);
   private seo = inject(SeoService);
   private translate = inject(TranslateService);
 
-  constructor(private languageService: LanguageService) {
+  // Istanziati all'avvio: restano in ascolto del consenso cookie
+  // e caricano gli script di tracciamento solo se autorizzati.
+  private analytics = inject(AnalyticsService);
+  private metaPixel = inject(MetaPixelService);
+
+  constructor() {
     this.languageService.init(); // ← prima la lingua
     this.seo.init(); // ← poi i meta, che ora trovano currentLang valorizzato
 

@@ -1,187 +1,83 @@
-<div class="popup-overlay" (click)="close()" role="presentation">
-  <div
-    class="popup-container"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="ferragosto-title"
-    (click)="$event.stopPropagation()"
+@if (visible()) {
+<div class="fp-overlay" (click)="close()"></div>
+
+<div
+  #dialog
+  class="fp"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="fp-title"
+  aria-describedby="fp-subtitle"
+>
+  <button
+    #closeBtn
+    type="button"
+    class="fp__close"
+    [attr.aria-label]="t(data.labels.close)"
+    (click)="close()"
   >
-    <button
-      type="button"
-      class="close-button"
-      aria-label="Chiudi popup"
-      (click)="close()"
-    >
-      ✕
-    </button>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7l-1.4-1.4L9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z" />
+    </svg>
+  </button>
 
-    <header class="popup-header">
-      <span class="event-date"> 15 Agosto 2026 </span>
+  <!-- Testata: cornice tratteggiata come nei post social del brand -->
+  <header class="fp__head">
+    <div class="dotted-frame" aria-hidden="true"></div>
+    <span
+      class="illo fp__illo"
+      style="--illo: url(/assets/illustrations/swordfish_sand-560.webp)"
+      aria-hidden="true"
+    ></span>
+    <p class="fp__date">{{ t(data.labels.date) }} {{ year }}</p>
+    <h2 id="fp-title" class="fp__title">{{ t(data.labels.title) }}</h2>
+    <p id="fp-subtitle" class="fp__subtitle">{{ t(data.labels.subtitle) }}</p>
+  </header>
 
-      <h2 id="ferragosto-title">Ferragosto vista mare</h2>
+  <div class="fp__body">
+    <p class="fp__choice">{{ t(data.labels.choice) }}</p>
 
-      <p class="title-en">Ferragosto by the Sea</p>
-
-      <p class="subtitle">Festeggia Ferragosto con il nostro menù speciale.</p>
-
-      <p class="subtitle-en">Celebrate Ferragosto with our special menu.</p>
-
-      <div class="menu-description">
-        <span class="it">
-          Il menù comprende la scelta di un antipasto, un primo e un secondo.
-        </span>
-
-        <span class="en">
-          The menu includes your choice of one starter, one first course and one
-          main course.
-        </span>
-      </div>
-    </header>
-
-    <section class="menu-section">
-      <h3>
-        Antipasti
-        <span>Starters</span>
-      </h3>
-
+    @for (course of data.courses; track $index) {
+    <section class="fp__course">
+      <h3>{{ t(course.title) }}</h3>
       <ul>
-        <li>
-          <span class="it">Impepata di cozze</span>
-          <span class="en">Peppered Mussels</span>
-        </li>
-
-        <li>
-          <span class="it">Insalata di mare</span>
-          <span class="en">Seafood Salad</span>
-        </li>
+        @for (dish of course.dishes; track $index) {
+        <li [attr.data-or]="t(data.labels.or)">{{ t(dish) }}</li>
+        }
       </ul>
     </section>
+    }
 
-    <section class="menu-section">
-      <h3>
-        Primi
-        <span>First Courses</span>
-      </h3>
-
-      <ul>
-        <li>
-          <span class="it">Spaghetti alle alici</span>
-          <span class="en">Spaghetti with Anchovies</span>
-        </li>
-
-        <li>
-          <span class="it"> Paccheri al pesce spada, menta e pomodorini </span>
-
-          <span class="en">
-            Paccheri with Swordfish, Mint and Cherry Tomatoes
-          </span>
-        </li>
-      </ul>
-    </section>
-
-    <section class="menu-section">
-      <h3>
-        Secondi
-        <span>Main Courses</span>
-      </h3>
-
-      <ul>
-        <li>
-          <span class="it"> Trancio di pesce spada alla griglia </span>
-
-          <span class="en"> Grilled Swordfish Steak </span>
-        </li>
-
-        <li>
-          <span class="it"> Frittura di calamari </span>
-
-          <span class="en"> Fried Squid </span>
-        </li>
-      </ul>
-    </section>
-
-    <section class="menu-section">
-      <h3>
-        Contorno
-        <span>Side Dish</span>
-      </h3>
-
-      <ul>
-        <li>
-          <span class="it"> Insalata fresca di stagione </span>
-
-          <span class="en"> Fresh Seasonal Salad </span>
-        </li>
-      </ul>
-    </section>
-
-    <section class="extra-info">
-      <div class="info-item">
-        <span class="it">
-          Una bottiglia di vino della casa ogni 4 persone
-        </span>
-
-        <span class="en"> One bottle of house wine for every 4 guests </span>
-      </div>
-
-      <div class="info-item">
-        <span class="it"> Coperto incluso </span>
-
-        <span class="en"> Cover charge included </span>
-      </div>
-
-      <div class="info-item">
-        <span class="it"> Bevande escluse </span>
-
-        <span class="en"> Drinks not included </span>
-      </div>
-
-      <div class="info-item">
-        <span class="it"> Pranzo 12:00 - 16:00 </span>
-
-        <span class="en"> Lunch from 12:00 PM to 4:00 PM </span>
-      </div>
-
-      <div class="info-item">
-        <span class="it"> Cena dalle 20:00 </span>
-
-        <span class="en"> Dinner from 8:00 PM </span>
-      </div>
-    </section>
-
-    <div class="price">
-      <span class="amount"> €50 </span>
-
-      <span class="per-person"> a persona </span>
-
-      <span class="per-person-en"> per person </span>
+    <div class="fp__price">
+      <span class="fp__amount">€{{ data.price }}</span>
+      <span class="fp__per">{{ t(data.labels.perPerson) }}</span>
     </div>
 
-    <footer class="popup-footer">
-      <div>
-        <span class="it"> Prenotazione obbligatoria </span>
+    <ul class="fp__info">
+      @for (item of data.info; track $index) {
+      <li>{{ t(item) }}</li>
+      }
+    </ul>
 
-        <span class="en"> Reservation required </span>
-      </div>
-
-      <div>
-        <span class="it"> Posti limitati </span>
-
-        <span class="en"> Limited availability </span>
-      </div>
-
-      <div>
-        <span class="it"> Durata del tavolo: 90 minuti </span>
-
-        <span class="en"> Table time: 90 minutes </span>
-      </div>
-    </footer>
-
-    <div class="actions">
-      <button class="primary-button" (click)="close()">
-        Ho capito
-        <span>I understand</span>
-      </button>
-    </div>
+    <ul class="fp__rules">
+      @for (rule of data.rules; track $index) {
+      <li>{{ t(rule) }}</li>
+      }
+    </ul>
   </div>
+
+  <footer class="fp__actions">
+    <a
+      class="btn btn--primary"
+      [href]="bookUrl()"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {{ t(data.labels.book) }}
+    </a>
+    <button type="button" class="btn btn--outline" (click)="close()">
+      {{ t(data.labels.close) }}
+    </button>
+  </footer>
 </div>
+}

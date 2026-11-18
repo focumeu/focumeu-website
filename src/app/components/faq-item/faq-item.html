@@ -1,7 +1,26 @@
-<div class="faq-item">
-  <button class="faq-question" (click)="isOpen = !isOpen">
-    {{ question | translate }}
-    <span class="faq-icon" [class.open]="isOpen">&#x2304;</span>
-  </button>
-  <div class="faq-answer" [class.open]="isOpen">{{ answer | translate }}</div>
+<div class="faq-item" [class.open]="isOpen">
+  <h3>
+    <button
+      type="button"
+      class="faq-item__question"
+      [id]="question + '-q'"
+      [attr.aria-expanded]="isOpen"
+      [attr.aria-controls]="question + '-a'"
+      (click)="isOpen = !isOpen"
+    >
+      <span>{{ question | translate }}</span>
+      <span class="faq-item__icon" aria-hidden="true"></span>
+    </button>
+  </h3>
+  <div
+    class="faq-item__panel"
+    role="region"
+    [id]="question + '-a'"
+    [attr.aria-labelledby]="question + '-q'"
+    [attr.inert]="isOpen ? null : ''"
+  >
+    <div class="faq-item__inner">
+      <p>{{ answer | translate }}</p>
+    </div>
+  </div>
 </div>

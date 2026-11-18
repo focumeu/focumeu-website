@@ -5,17 +5,34 @@
     "EXPERIENCE": "Esperienza",
     "MOMENTS": "Momenti",
     "FAQ": "FAQ",
-    "CONTACT": "Contatti"
+    "CONTACT": "Contatti",
+    "BOOK": "Prenota",
+    "OPEN-MENU": "Apri il menu",
+    "CLOSE-MENU": "Chiudi il menu",
+    "LANGUAGE": "Lingua",
+    "MAIN": "Navigazione principale"
   },
   "HERO": {
+    "H1": "Focu Meu – Ristorante, brace e cocktail bar sul mare a Sant'Andrea Apostolo dello Ionio",
     "BOOKING-BTN": "Prenota",
     "LOCATION-BTN": "Location",
     "PAYOFF": "Dall'Alba al Tramonto",
     "SEASON-CLOSED": {
       "TITLE": "Grazie per questa stagione insieme!",
       "MESSAGE": "La stagione estiva di Focu Meu si conclude qui. Grazie di cuore a tutti voi che ci avete scelto, che siete passati a trovarci e che avete condiviso con noi questa estate.",
-      "SOCIAL-TEXT": "Ci prendiamo una pausa, ma continueremo a raccontarvi tutto quello che verrà. Seguiteci sui social per rimanere aggiornati sulla prossima stagione."
-    }
+      "SOCIAL-TEXT": "Ci prendiamo una pausa, ma continueremo a raccontarvi tutto quello che verrà. Seguiteci sui social per rimanere aggiornati sulla prossima stagione.",
+      "EYEBROW": "Stagione 2026 conclusa",
+      "CTA-IG": "Seguici su Instagram",
+      "CTA-FB": "Facebook"
+    },
+    "IN-SEASON": {
+      "EYEBROW": "Sant'Andrea Apostolo dello Ionio · Calabria",
+      "SUBTITLE": "Cucina calabrese alla brace, cocktail e tramonti sul mar Ionio. Dalla colazione fino a notte fonda.",
+      "WHATSAPP": "WhatsApp",
+      "DIRECTIONS": "Come arrivare",
+      "OPEN": "Aperti tutti i giorni"
+    },
+    "SCROLL": "Scorri"
   },
   "STORY": {
     "TITLE": "La nostra storia",
@@ -24,7 +41,9 @@
     "TEXT2": "Focu Meu nasce qui. A Sant'Andrea Apostolo dello Ionio, nel cuore della Calabria.",
     "TEXT3": "È un ristorante e lido contemporaneo che racconta la cultura calabrese attraverso il fuoco, il cibo e il ritmo della costa. La cucina è radicata nella tradizione calabrese - cotture alla brace, ingredienti stagionali, sapori intensi del territorio - reinterpretata con uno sguardo moderno, senza perdere l'anima.",
     "TEXT4": "Gli ospiti arrivano per mangiare. Restano per il resto.",
-    "TEXT5": "Il fuoco è acceso. Un posto dove si torna, sulla costa Ionica, Calabria."
+    "TEXT5": "Il fuoco è acceso. Un posto dove si torna, sulla costa Ionica, Calabria.",
+    "IMAGE-ALT": "Tavola apparecchiata sulla terrazza di Focu Meu",
+    "IMAGE2-ALT": "L'insegna di Focu Meu affacciata sul mare"
   },
   "EXPERIENCE": {
     "TITLE": "L'Esperienza",
@@ -33,12 +52,23 @@
     "SUBTITLE2": "Ristorante",
     "TEXT2": "Cucina calabrese contemporanea: cottura alla brace, ingredienti stagionali e prodotti del territorio del Sud Italia. La tradizione, reinterpretata.",
     "SUBTITLE3": "Atmosfera",
-    "TEXT3": "Musica, fuoco e ospitalità sul mare. Un'esperienza di condivisione sulla costa Ionica della Calabria."
+    "TEXT3": "Musica, fuoco e ospitalità sul mare. Un'esperienza di condivisione sulla costa Ionica della Calabria.",
+    "EYEBROW": "Cosa ti aspetta"
   },
   "MOMENTS": {
     "TITLE": "Momenti",
     "ALLERGENS-SUBTITLE": "Allergeni",
-    "ALLERGENS-TEXT": "Per informazioni su allergeni e intolleranze alimentari, invitiamo la gentile clientela a rivolgersi al personale di sala prima dell’ordinazione, ai sensi del Regolamento UE n. 1169/2011."
+    "ALLERGENS-TEXT": "Per informazioni su allergeni e intolleranze alimentari, invitiamo la gentile clientela a rivolgersi al personale di sala prima dell’ordinazione, ai sensi del Regolamento UE n. 1169/2011.",
+    "EYEBROW": "Scorci di stagione",
+    "INTRO": "Qualche scatto della nostra estate sul mare Ionio. Il resto lo scopri dal vivo.",
+    "SWIPE": "Scorri per vedere altre foto",
+    "CAPTIONS": {
+      "BAR": "Spritz al bancone",
+      "INSEGNA": "L'ingresso",
+      "SPECCHIO": "Dettagli",
+      "PIATTI": "Mise en place",
+      "LOUNGE": "La lounge"
+    }
   },
   "FAQ": {
     "TITLE": "FAQ",
@@ -57,7 +87,11 @@
     "QUESTION7": "Focu Meu offre il brunch?",
     "ANSWER7": "Sì. Focu Meu propone brunch sul mare durante la stagione estiva, sulla costa Ionica della Calabria. La prenotazione è consigliata.",
     "QUESTION8": "È possibile visionare il menù?",
-    "ANSWER8": "La nostra cucina segue il ritmo del mare. Poiché lavoriamo con pescato del giorno e materie prime fresche, il menù varia frequentemente. Per questo abbiamo scelto di non pubblicare una carta fissa sul sito. Vi aspettiamo da Focu Meu per scoprire le proposte del giorno."
+    "ANSWER8": "La nostra cucina segue il ritmo del mare. Poiché lavoriamo con pescato del giorno e materie prime fresche, il menù varia frequentemente. Per questo abbiamo scelto di non pubblicare una carta fissa sul sito. Vi aspettiamo da Focu Meu per scoprire le proposte del giorno.",
+    "EYEBROW": "Domande frequenti",
+    "INTRO": "Tutto quello che c'è da sapere prima di venirci a trovare.",
+    "MORE": "Non trovi la risposta?",
+    "MORE-CTA": "Scrivici su WhatsApp"
   },
   "CONTACTS": {
     "TITLE": "Vieni a trovarci",
@@ -75,12 +109,24 @@
     "APERITIF": "Aperitivi",
     "DINNER": "Cena",
     "SCHEDULE1": "Da Lunedì a Domenica",
-    "SCHEDULE2": "Dalle 08:00 fino a notte fonda"
+    "SCHEDULE2": "Dalle 08:00 fino a notte fonda",
+    "EYEBROW": "Dove siamo",
+    "DIRECTIONS": "Indicazioni",
+    "CALL": "Chiama",
+    "WHATSAPP": "WhatsApp",
+    "MAP-LOAD": "Mostra la mappa",
+    "MAP-NOTE": "La mappa è fornita da Google Maps: caricandola accetti i cookie di Google.",
+    "MAP-OPEN": "Apri in Google Maps",
+    "MAP-TITLE": "Mappa: come raggiungere Focu Meu"
   },
   "FOOTER": {
     "TEXT": "Prenota il tuo tavolo e vivi l'estate sulla costa Ionica della Calabria.",
     "RIGHTS": "Tutti i diritti sono riservati",
-    "COOKIE-LINK": "Gestisci preferenze Cookie"
+    "COOKIE-LINK": "Gestisci preferenze Cookie",
+    "EXPLORE": "Esplora",
+    "CONTACT": "Contatti",
+    "FOLLOW": "Seguici",
+    "BACK-TOP": "Torna su"
   },
   "SEO": {
     "TITLE": "Focu Meu – Ristorante & Bar",

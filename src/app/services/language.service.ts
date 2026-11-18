@@ -20,17 +20,47 @@ export class LanguageService {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
+  /**
+   * Priorità: parametro ?lang= nell'URL (usato da sitemap/hreflang)
+   * → lingua salvata in localStorage → italiano.
+   */
   init() {
-    const saved = this.isBrowser
-      ? (localStorage.getItem(this.STORAGE_KEY) ?? 'it') // ← solo su browser
+    const lang = this.isBrowser
+      ? (this.fromUrl() ?? this.fromStorage() ?? 'it')
       : 'it'; // ← su server usa sempre italiano
-    this.translate.use(saved);
+    if (this.isBrowser && this.fromUrl()) this.save(lang);
+    this.translate.use(lang);
   }
 
   setLanguage(code: string) {
+    if (!this.isSupported(code)) return;
     this.translate.use(code);
-    if (this.isBrowser) {
-      localStorage.setItem(this.STORAGE_KEY, code); // ← solo su browser
+    this.save(code);
+  }
+
+  private isSupported(code: string | null): code is string {
+    return !!code && this.languages.some((l) => l.code === code);
+  }
+
+  private fromUrl(): string | null {
+    const code = new URLSearchParams(window.location.search).get('lang');
+    return this.isSupported(code) ? code : null;
+  }
+
+  private fromStorage(): string | null {
+    try {
+      const code = localStorage.getItem(this.STORAGE_KEY);
+      return this.isSupported(code) ? code : null;
+    } catch {
+      return null;
+    }
+  }
+
+  private save(code: string) {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, code);
+    } catch {
+      /* storage non disponibile (es. navigazione privata) */
     }
   }
 

@@ -1,0 +1,45 @@
+[build]
+  command = "npm run build"
+  publish = "dist/focumeu/browser"
+
+# ── Header di sicurezza (validi per tutto il sito) ──
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+# ── Cache lunga per JS/CSS con hash nel nome (cambiano nome ad ogni build) ──
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ── Font, immagini e illustrazioni (nomi senza hash): cache di 30 giorni ──
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/assets/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/assets/illustrations/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# ── Fallback SPA: le rotte sconosciute servono index.html ──
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -5,17 +5,34 @@
     "EXPERIENCE": "Experience",
     "MOMENTS": "Moments",
     "FAQ": "FAQ",
-    "CONTACT": "Contact"
+    "CONTACT": "Contact",
+    "BOOK": "Book",
+    "OPEN-MENU": "Open menu",
+    "CLOSE-MENU": "Close menu",
+    "LANGUAGE": "Language",
+    "MAIN": "Main navigation"
   },
   "HERO": {
+    "H1": "Focu Meu – Seaside restaurant, grill and cocktail bar in Sant'Andrea Apostolo dello Ionio, Calabria",
     "BOOKING-BTN": "Book",
     "LOCATION-BTN": "Location",
     "PAYOFF": "From Dawn to Dusk",
     "SEASON-CLOSED": {
       "TITLE": "Thank you for sharing this season with us!",
       "MESSAGE": "The Focu Meu summer season comes to an end here. A heartfelt thank you to everyone who chose us, came to visit and shared this summer with us.",
-      "SOCIAL-TEXT": "We are taking a little break, but we will keep sharing what’s coming next. Follow us on social media to stay updated on the next season."
-    }
+      "SOCIAL-TEXT": "We are taking a little break, but we will keep sharing what’s coming next. Follow us on social media to stay updated on the next season.",
+      "EYEBROW": "2026 season closed",
+      "CTA-IG": "Follow us on Instagram",
+      "CTA-FB": "Facebook"
+    },
+    "IN-SEASON": {
+      "EYEBROW": "Sant'Andrea Apostolo dello Ionio · Calabria",
+      "SUBTITLE": "Calabrian woodfire cooking, cocktails and sunsets on the Ionian Sea. From breakfast until late at night.",
+      "WHATSAPP": "WhatsApp",
+      "DIRECTIONS": "Get directions",
+      "OPEN": "Open every day"
+    },
+    "SCROLL": "Scroll"
   },
   "STORY": {
     "TITLE": "Our Story",
@@ -24,7 +41,9 @@
     "TEXT2": "Focu Meu was born here. In Sant'Andrea Apostolo dello Ionio, in the heart of Calabria.",
     "TEXT3": "A contemporary restaurant and lido telling the story of Calabria through fire, food and the rhythm of the coast. The kitchen is rooted in Calabrian tradition - woodfire grilling, seasonal ingredients, intense flavours of the territory - reinterpreted with a modern sensibility, without losing its soul.",
     "TEXT4": "Guests come for the food. They stay for everything else.",
-    "TEXT5": "The fire is lit. A place you come back to, on the Ionian coast, Calabria."
+    "TEXT5": "The fire is lit. A place you come back to, on the Ionian coast, Calabria.",
+    "IMAGE-ALT": "Table set on Focu Meu's terrace",
+    "IMAGE2-ALT": "The Focu Meu sign overlooking the sea"
   },
   "EXPERIENCE": {
     "TITLE": "Experience",
@@ -33,12 +52,23 @@
     "SUBTITLE2": "Restaurant",
     "TEXT2": "Contemporary Calabrian cuisine: woodfire grilling, seasonal ingredients and produce from Southern Italy. Tradition, reinterpreted.",
     "SUBTITLE3": "Atmosphere",
-    "TEXT3": "Music, fire and coastal hospitality. A shared experience on the Ionian coast of Calabria."
+    "TEXT3": "Music, fire and coastal hospitality. A shared experience on the Ionian coast of Calabria.",
+    "EYEBROW": "What to expect"
   },
   "MOMENTS": {
     "TITLE": "Moments",
     "ALLERGENS-SUBTITLE": "Allergens",
-    "ALLERGENS-TEXT": "For information on allergens and food intolerances, we kindly ask guests to speak with a member of our team before ordering, in accordance with EU Regulation No. 1169/2011."
+    "ALLERGENS-TEXT": "For information on allergens and food intolerances, we kindly ask guests to speak with a member of our team before ordering, in accordance with EU Regulation No. 1169/2011.",
+    "EYEBROW": "Glimpses of the season",
+    "INTRO": "A few snapshots of our summer on the Ionian Sea. The rest you discover in person.",
+    "SWIPE": "Swipe to see more photos",
+    "CAPTIONS": {
+      "BAR": "Spritz at the bar",
+      "INSEGNA": "The entrance",
+      "SPECCHIO": "Details",
+      "PIATTI": "Table setting",
+      "LOUNGE": "The lounge"
+    }
   },
   "FAQ": {
     "TITLE": "FAQ",
@@ -57,7 +87,11 @@
     "QUESTION7": "Does Focu Meu serve brunch? ",
     "ANSWER7": "Yes. Focu Meu offers brunch on the water during the summer season, on the Ionian coast of Calabria. Booking is recommended.",
     "QUESTION8": "Is it possible to view the menu?",
-    "ANSWER8": "Our cuisine follows the rhythm of the sea. As we work with the catch of the day and fresh ingredients, our menu changes frequently. For this reason, we have chosen not to publish a fixed menu on our website. We look forward to welcoming you to Focu Meu and introducing you to our daily specialties."
+    "ANSWER8": "Our cuisine follows the rhythm of the sea. As we work with the catch of the day and fresh ingredients, our menu changes frequently. For this reason, we have chosen not to publish a fixed menu on our website. We look forward to welcoming you to Focu Meu and introducing you to our daily specialties.",
+    "EYEBROW": "Frequently asked questions",
+    "INTRO": "Everything you need to know before visiting us.",
+    "MORE": "Can't find the answer?",
+    "MORE-CTA": "Message us on WhatsApp"
   },
   "CONTACTS": {
     "TITLE": "Find Us",
@@ -75,12 +109,24 @@
     "APERITIF": "Happy Hour",
     "DINNER": "Dinner",
     "SCHEDULE1": "Monday to Sunday",
-    "SCHEDULE2": "From 8AM until late at night"
+    "SCHEDULE2": "From 8AM until late at night",
+    "EYEBROW": "Where we are",
+    "DIRECTIONS": "Directions",
+    "CALL": "Call",
+    "WHATSAPP": "WhatsApp",
+    "MAP-LOAD": "Show map",
+    "MAP-NOTE": "The map is provided by Google Maps: loading it means accepting Google's cookies.",
+    "MAP-OPEN": "Open in Google Maps",
+    "MAP-TITLE": "Map: how to reach Focu Meu"
   },
   "FOOTER": {
     "TEXT": "Book your table and experience summer on the Ionian coast of Calabria.",
     "RIGHTS": "All Rights Reserved.",
-    "COOKIE-LINK": "Manage Cookies Preference"
+    "COOKIE-LINK": "Manage Cookies Preference",
+    "EXPLORE": "Explore",
+    "CONTACT": "Contact",
+    "FOLLOW": "Follow us",
+    "BACK-TOP": "Back to top"
   },
   "SEO": {
     "TITLE": "Focu Meu – Restaurant & Bar",

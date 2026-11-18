@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { CookieConsentService } from '../../services/cookie-consent.service';
 import { MetaPixelService } from '../../services/meta-pixel.service';
@@ -10,31 +10,26 @@ import { MetaPixelService } from '../../services/meta-pixel.service';
   styleUrl: './footer.scss',
 })
 export class Footer {
-  constructor(
-    private cookieConsent: CookieConsentService,
-    private metaPixel: MetaPixelService,
-  ) {}
+  private cookieConsent = inject(CookieConsentService);
+  private metaPixel = inject(MetaPixelService);
 
-  currentYear = new Date().getFullYear();
+  readonly currentYear = new Date().getFullYear();
+
+  readonly links = [
+    { id: 'story', label: 'NAV.STORY' },
+    { id: 'experience', label: 'NAV.EXPERIENCE' },
+    { id: 'moments', label: 'NAV.MOMENTS' },
+    { id: 'faq', label: 'NAV.FAQ' },
+    { id: 'contact', label: 'NAV.CONTACT' },
+  ];
 
   openCookieSettings(): void {
     this.cookieConsent.openPreferences();
   }
 
-  bookBtnClick(): void {
+  socialClick(network: string): void {
     this.metaPixel.trackEvent('ViewContent', {
-      content_name: 'Footer Button - Book now',
-    });
-  }
-
-  socialFbClick(): void {
-    this.metaPixel.trackEvent('ViewContent', {
-      content_name: 'Facebook button redirect',
-    });
-  }
-  socialIgClick(): void {
-    this.metaPixel.trackEvent('ViewContent', {
-      content_name: 'Instagram button redirect',
+      content_name: `${network} button redirect`,
     });
   }
 }

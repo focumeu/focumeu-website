@@ -1,17 +1,68 @@
+// ═══════════════════════════════════════════════════════════════════════════
+//  FOCU MEU — design system globale
+// ═══════════════════════════════════════════════════════════════════════════
+
 :root {
-  --color-chilli: #d24b1b;
-  --color-orange: #f68f42;
-  --color-butter: #f1d08d;
-  --color-sand: #f7ecdd;
-  --color-breeze: #92b7ca;
+  // ── Palette ufficiale (Brand Kit 2026) ──
   --color-deepocean: #204ecf;
+  --color-breeze: #92b7ca;
+  --color-sand: #f7ecdd;
+  --color-butter: #f1d08d;
+  --color-orange: #f68f42;
+  --color-chilli: #d24b1b;
   --color-white: #ffffff;
   --color-lightgrey: #f7f7f7;
   --color-grey: #afafaf;
   --color-darkgrey: #525252;
   --color-black: #0c0c0c;
+
+  // tinte ufficiali (le righe chiare sotto ogni colore nel brand kit)
+  --color-deepocean-50: color-mix(in srgb, var(--color-deepocean) 50%, white);
+  --color-breeze-25: color-mix(in srgb, var(--color-breeze) 25%, white);
+  --color-sand-50: color-mix(in srgb, var(--color-sand) 50%, white);
+  --color-butter-50: color-mix(in srgb, var(--color-butter) 50%, white);
+  --color-orange-50: color-mix(in srgb, var(--color-orange) 50%, white);
+  --color-chilli-50: color-mix(in srgb, var(--color-chilli) 50%, white);
+  --color-chilli-25: color-mix(in srgb, var(--color-chilli) 25%, white);
+
+  // ruoli
+  --text: var(--color-black);
+  --text-muted: var(--color-darkgrey);
+
+  // ── Tipografia ──
+  --font-display: "Ribes Black", "Ribes Regular", sans-serif;
+  --font-brand: "Ribes Regular", sans-serif;
+  --font-label: "Staatliches", sans-serif;
+  --font-body: "Zalando Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  // scala fluida: min @ 360px → max @ 1440px
+  --fs-xs: clamp(0.78rem, 0.75rem + 0.15vw, 0.875rem);
+  --fs-sm: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
+  --fs-md: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+  --fs-lg: clamp(1.2rem, 1.05rem + 0.6vw, 1.6rem);
+  --fs-xl: clamp(1.6rem, 1.25rem + 1.5vw, 2.5rem);
+  --fs-2xl: clamp(2.6rem, 1.8rem + 3.6vw, 5rem);
+  --fs-3xl: clamp(3rem, 1.6rem + 6.4vw, 7.5rem);
+
+  // ── Spazi e layout ──
+  --container: 1280px;
+  --gutter: clamp(1.25rem, 0.6rem + 3vw, 4rem);
+  --section-y: clamp(4.5rem, 3rem + 7vw, 9rem);
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  // ── Movimento ──
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-soft: 0 18px 50px -20px rgba(12, 12, 12, 0.35);
+  --shadow-polaroid: 0 14px 34px -12px rgba(12, 12, 12, 0.4);
+
+  // altezza navbar per lo scroll alle ancore
+  --nav-h: 84px;
 }
 
+// ── Font (tutti self-hosted: nessuna richiesta a server esterni) ──
 @font-face {
   font-family: "Ribes Regular";
   src: url("/assets/fonts/Ribes-Regular.woff2") format("woff2");
@@ -26,7 +77,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Ribes Light";
   src: url("/assets/fonts/Ribes-Light.woff2") format("woff2");
@@ -34,36 +84,298 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Staatliches";
+  src: url("/assets/fonts/Staatliches-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zalando Sans";
+  src: url("/assets/fonts/ZalandoSans-Variable.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
 
-body,
-html,
-* {
+// ── Reset ──
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Ribes Regular", sans-serif;
-}
-
-html {
-  background-color: var(--color-sand);
-  width: 100dvw;
-  min-height: 100dvh;
 }
 
 * {
   -webkit-tap-highlight-color: transparent;
 }
 
-// Compensazione navbar fixed — aggiungere a ogni sezione con id
-#home,
-#story,
-#experience,
-#moments,
-#faq,
-#contact {
-  scroll-margin-top: 143px; // altezza approssimativa navbar desktop
+html {
+  background-color: var(--color-sand);
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
-  @media (max-width: 1024px) {
-    scroll-margin-top: 127px; // navbar tablet/mobile
+body {
+  min-height: 100dvh;
+  background-color: var(--color-sand);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+img,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+a {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-butter);
+  color: var(--color-black);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  UTILITY
+// ═══════════════════════════════════════════════════════════════════════════
+
+// Nasconde visivamente un elemento lasciandolo leggibile a screen reader e motori di ricerca
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+// ── Intestazioni di sezione ──
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--font-label);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+
+  &::before {
+    content: "";
+    width: 2.2em;
+    height: 2px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+// ── Pulsanti ──
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-label);
+  font-size: var(--fs-md);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s var(--ease-out);
+
+  svg {
+    width: 1.15em;
+    height: 1.15em;
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  // pieno: arancio/rosso su fondo scuro o chiaro
+  &--primary {
+    background: var(--color-chilli);
+    color: var(--color-sand);
+
+    &:hover {
+      background: var(--color-orange);
+    }
+  }
+
+  // pieno chiaro: per fondi rossi o foto
+  &--light {
+    background: var(--color-sand);
+    color: var(--color-chilli);
+
+    &:hover {
+      background: var(--color-butter);
+    }
+  }
+
+  // contorno: su foto o fondi colorati
+  &--ghost {
+    border-color: currentColor;
+    color: var(--color-sand);
+    background: rgba(247, 236, 221, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    &:hover {
+      background: rgba(247, 236, 221, 0.16);
+    }
+  }
+
+  &--outline {
+    border-color: currentColor;
+    color: var(--color-chilli);
+
+    &:hover {
+      background: var(--color-chilli);
+      border-color: var(--color-chilli);
+      color: var(--color-sand);
+    }
+  }
+}
+
+// ── Illustrazioni del brand ricolorabili ──
+// Uso: <span class="illo" style="--illo: url(/assets/illustrations/x.webp)"></span>
+// Il colore si cambia con --illo-color (default: colore del testo).
+.illo {
+  display: block;
+  background-color: var(--illo-color, currentColor);
+  -webkit-mask: var(--illo) center / contain no-repeat;
+  mask: var(--illo) center / contain no-repeat;
+}
+
+// ── Cornice tratteggiata (motivo dei post social del brand kit) ──
+.dotted-frame {
+  position: absolute;
+  inset: var(--frame-inset, clamp(0.9rem, 2.5vw, 2rem));
+  border: 3px dotted currentColor;
+  pointer-events: none;
+}
+
+// ── Cornice polaroid (foto bianche con bordo inferiore più alto) ──
+.polaroid {
+  background: var(--color-white);
+  padding: clamp(10px, 1.4vw, 16px) clamp(10px, 1.4vw, 16px)
+    clamp(36px, 4.5vw, 58px);
+  box-shadow: var(--shadow-polaroid);
+}
+
+// ── Sfondo decorativo a onde (riusato da più sezioni) ──
+.wave-bg {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -10% -20%;
+    z-index: -1;
+    background: url("/assets/illustrations/wave.webp") center / 1600px auto
+      repeat;
+    opacity: var(--wave-opacity, 0.08);
+    pointer-events: none;
+  }
+}
+
+// ── Animazione di ingresso allo scroll (vedi RevealDirective) ──
+// Gli elementi sono nascosti solo se il JS è attivo e l'utente non ha
+// chiesto di ridurre le animazioni: senza JS il contenuto resta visibile.
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready [data-reveal] {
+    opacity: 0;
+    // "translate" (non "transform") così non annulla rotazioni già presenti
+    translate: 0 28px;
+    transition:
+      opacity 0.8s var(--ease-out),
+      translate 0.8s var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal-ready [data-reveal].is-visible {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

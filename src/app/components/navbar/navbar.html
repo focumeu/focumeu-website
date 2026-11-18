@@ -1,117 +1,129 @@
-<nav
+<header
   class="navbar"
+  [class.is-solid]="!isTransparent || isMenuOpen"
+  [class.is-hidden]="isHidden && !isMenuOpen"
   [class.menu-open]="isMenuOpen"
-  [class.menu-open]="isMenuOpen"
-  [class.transparent]="isTransparent"
 >
-  <img src="logo_fm.webp" alt="Logo Focomeu" loading="lazy" class="logo" />
-
-  <!-- Hamburger button (tablet e mobile) -->
-  <button
-    class="hamburger"
-    (click)="toggleMenu()"
-    [attr.aria-expanded]="isMenuOpen"
-    aria-label="Toggle menu"
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <!-- Desktop nav links -->
-  <section class="navlinks desktop-only">
-    <button (click)="scrollTo('hero')" class="navlink">
-      {{ 'NAV.HOME' | translate }}
-    </button>
-    <button (click)="scrollTo('story')" class="navlink">
-      {{ 'NAV.STORY' | translate }}
-    </button>
-    <button (click)="scrollTo('experience')" class="navlink">
-      {{ 'NAV.EXPERIENCE' | translate }}
-    </button>
-    <button (click)="scrollTo('moments')" class="navlink">
-      {{ 'NAV.MOMENTS' | translate }}
-    </button>
-    <button (click)="scrollTo('faq')" class="navlink">
-      {{ 'NAV.FAQ' | translate }}
-    </button>
-    <button (click)="scrollTo('contact')" class="navlink">
-      {{ 'NAV.CONTACT' | translate }}
-    </button>
-  </section>
-
-  <!-- Language switcher desktop (visibile solo su desktop) -->
-  <div class="lang-switcher desktop-only">
-    @for (lang of language.languages; track lang.code) {
-    <button
-      [class.active]="language.getCurrent() === lang.code"
-      (click)="language.setLanguage(lang.code)"
-      [title]="lang.label"
-    >
+  <div class="navbar__inner">
+    <a href="#hero" class="navbar__logo" (click)="closeMenu()">
       <img
-        [src]="'/assets/flags/' + lang.flag"
-        [alt]="lang.label"
-        width="24"
-        height="18"
+        src="logo_fm.webp"
+        alt="Focu Meu"
+        width="593"
+        height="188"
+        fetchpriority="high"
       />
-    </button>
-    }
-  </div>
-</nav>
+    </a>
 
-<!-- Fullscreen overlay menu -->
-<div
-  class="fullscreen-menu"
-  [class.open]="isMenuOpen"
-  (click)="closeOnBackdrop($event)"
->
-  <div class="fullscreen-menu__inner">
-    <nav class="fullscreen-menu__links">
-      <button (click)="scrollToAndClose('home')" class="fullscreen-link">
-        {{ 'NAV.HOME' | translate }}
-      </button>
-      <button (click)="scrollToAndClose('story')" class="fullscreen-link">
-        {{ 'NAV.STORY' | translate }}
-      </button>
-      <button (click)="scrollToAndClose('experience')" class="fullscreen-link">
-        {{ 'NAV.EXPERIENCE' | translate }}
-      </button>
-      <button (click)="scrollToAndClose('moments')" class="fullscreen-link">
-        {{ 'NAV.MOMENTS' | translate }}
-      </button>
-      <button (click)="scrollToAndClose('faq')" class="fullscreen-link">
-        {{ 'NAV.FAQ' | translate }}
-      </button>
-      <button (click)="scrollToAndClose('contact')" class="fullscreen-link">
-        {{ 'NAV.CONTACT' | translate }}
-      </button>
-      <!-- <button class="booking-btn">
-        <a
-          href="https://forms.gle/2Z8vcxdRv3aK6YGXA"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{'HERO.BOOKING-BTN'| translate}}
-        </a>
-      </button> -->
+    <nav class="navbar__links" [attr.aria-label]="'NAV.MAIN' | translate">
+      @for (link of links; track link.id) {
+      <a [href]="'#' + link.id" class="navbar__link">{{ link.label | translate }}</a>
+      }
     </nav>
 
-    <!-- Language switcher nel menu mobile -->
-    <div class="lang-switcher mobile-lang">
+    <div class="navbar__actions">
+      <div
+        class="lang-switcher"
+        role="group"
+        [attr.aria-label]="'NAV.LANGUAGE' | translate"
+      >
+        @for (lang of language.languages; track lang.code) {
+        <button
+          type="button"
+          [class.active]="language.getCurrent() === lang.code"
+          [attr.aria-pressed]="language.getCurrent() === lang.code"
+          [attr.aria-label]="lang.label"
+          [attr.lang]="lang.code"
+          (click)="language.setLanguage(lang.code)"
+        >
+          {{ lang.code }}
+        </button>
+        }
+      </div>
+
+      <!-- ═══ STAGIONE — pulsante in navbar ═══════════════════════════════
+           FUORI STAGIONE: attivo il link "Instagram".
+           IN STAGIONE: commenta il blocco "Instagram" e scommenta "Prenota".
+           ════════════════════════════════════════════════════════════════ -->
+
+      <!-- ▼ FUORI STAGIONE -->
+      <a
+        class="btn btn--primary navbar__cta"
+        href="https://www.instagram.com/focumeu_it"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+      <!-- ▲ FUORI STAGIONE -->
+
+      <!-- ▼ IN STAGIONE
+      <a
+        class="btn btn--primary navbar__cta"
+        href="https://forms.gle/2Z8vcxdRv3aK6YGXA"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ 'NAV.BOOK' | translate }}
+      </a>
+      ▲ IN STAGIONE -->
+
+      <button
+        type="button"
+        class="hamburger"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen"
+        [attr.aria-label]="(isMenuOpen ? 'NAV.CLOSE-MENU' : 'NAV.OPEN-MENU') | translate"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu a schermo intero (tablet e mobile) -->
+<div
+  id="mobile-menu"
+  class="mobile-menu"
+  [class.open]="isMenuOpen"
+  [attr.aria-hidden]="!isMenuOpen"
+  [attr.inert]="isMenuOpen ? null : ''"
+>
+  <nav class="mobile-menu__links" [attr.aria-label]="'NAV.MAIN' | translate">
+    @for (link of links; track link.id; let i = $index) {
+    <a
+      [href]="'#' + link.id"
+      class="mobile-menu__link"
+      [style.--i]="i"
+      (click)="closeMenu()"
+    >
+      <span class="mobile-menu__num">0{{ i + 1 }}</span>
+      {{ link.label | translate }}
+    </a>
+    }
+  </nav>
+
+  <div class="mobile-menu__footer">
+    <div class="lang-switcher lang-switcher--large" role="group" [attr.aria-label]="'NAV.LANGUAGE' | translate">
       @for (lang of language.languages; track lang.code) {
       <button
+        type="button"
         [class.active]="language.getCurrent() === lang.code"
+        [attr.aria-pressed]="language.getCurrent() === lang.code"
+        [attr.aria-label]="lang.label"
+        [attr.lang]="lang.code"
         (click)="language.setLanguage(lang.code)"
-        [title]="lang.label"
       >
-        <img
-          [src]="'/assets/flags/' + lang.flag"
-          [alt]="lang.label"
-          width="32"
-          height="24"
-        />
+        {{ lang.code }}
       </button>
       }
+    </div>
+
+    <div class="mobile-menu__social">
+      <a href="https://www.instagram.com/focumeu_it" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61573220798900" target="_blank" rel="noopener noreferrer">Facebook</a>
     </div>
   </div>
 </div>

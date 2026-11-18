@@ -1,27 +1,82 @@
-<section id="story">
-  <div class="texts">
-    <h1>{{'STORY.TITLE' | translate}}</h1>
-    <div class="description">
-      <h4>{{'STORY.SUBTITLE' | translate}}</h4>
-      <p>{{'STORY.TEXT1' | translate}}</p>
-      <p>{{'STORY.TEXT2' | translate}}</p>
+<section id="story" class="story wave-bg">
+  <div class="container story__grid">
+    <div class="story__text">
+      <p class="eyebrow" appReveal>{{ 'STORY.SUBTITLE' | translate }}</p>
+      <h2 class="section-title" appReveal>{{ 'STORY.TITLE' | translate }}</h2>
 
-      <p>{{'STORY.TEXT3' | translate}}</p>
-      <p>{{'STORY.TEXT4' | translate}}</p>
-      <p>{{'STORY.TEXT5' | translate}}</p>
+      <p class="story__lead" appReveal>{{ 'STORY.TEXT1' | translate }}</p>
+
+      <div class="story__body" appReveal>
+        <p>{{ 'STORY.TEXT2' | translate }}</p>
+        <p>{{ 'STORY.TEXT3' | translate }}</p>
+      </div>
+
+      <blockquote class="story__quote" appReveal>
+        <p>{{ 'STORY.TEXT4' | translate }}</p>
+      </blockquote>
+
+      <p class="story__sign" appReveal>{{ 'STORY.TEXT5' | translate }}</p>
+    </div>
+
+    <div class="story__media">
+      <figure class="polaroid story__photo story__photo--main" appReveal>
+        <img
+          src="/assets/images/miseenplace-1024.webp"
+          srcset="
+            /assets/images/miseenplace-640.webp   640w,
+            /assets/images/miseenplace-1024.webp 1024w
+          "
+          sizes="(max-width: 1024px) 90vw, 520px"
+          width="1024"
+          height="682"
+          [alt]="'STORY.IMAGE-ALT' | translate"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+
+      <figure
+        class="polaroid story__photo story__photo--small"
+        appReveal
+        [revealDelay]="150"
+      >
+        <img
+          src="/assets/images/esterno-640.webp"
+          sizes="(max-width: 1024px) 50vw, 280px"
+          width="640"
+          height="427"
+          [alt]="'STORY.IMAGE2-ALT' | translate"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+
+      <!-- Timbro rotante: testo circolare che gira lentamente attorno al sole -->
+      <div class="story__badge" aria-hidden="true">
+        <svg class="story__badge-text" viewBox="0 0 200 200">
+          <defs>
+            <path
+              id="badge-circle"
+              d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"
+            />
+          </defs>
+          <text textLength="470" lengthAdjust="spacing">
+            <textPath href="#badge-circle">
+              {{ 'HERO.PAYOFF' | translate }} · Focu Meu ·
+            </textPath>
+          </text>
+        </svg>
+        <span
+          class="illo story__badge-sun"
+          style="--illo: url(/assets/illustrations/sun_sand-560.webp)"
+        ></span>
+      </div>
+
+      <span
+        class="illo story__illo"
+        style="--illo: url(/assets/illustrations/swordfish_sand-560.webp)"
+        aria-hidden="true"
+      ></span>
     </div>
   </div>
-  <div class="images">
-    <img
-      src="/assets/images/miseenplace.webp"
-      alt="Immagine Ristorante"
-      loading="lazy"
-    />
-  </div>
-  <img
-    src="/assets/illustrations/wave.webp"
-    alt="background wave illustration"
-    loading="lazy"
-    class="wave"
-  />
 </section>

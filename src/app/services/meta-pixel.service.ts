@@ -29,7 +29,11 @@ export class MetaPixelService {
       .pipe(filter((prefs) => prefs !== null))
       .subscribe((prefs) => {
         if (prefs!.marketing) {
+          if (this.loaded) window.fbq('consent', 'grant');
           this.init();
+        } else if (this.loaded) {
+          // consenso revocato dopo il caricamento: blocca l'invio di eventi
+          window.fbq('consent', 'revoke');
         }
       });
   }
@@ -65,8 +69,6 @@ export class MetaPixelService {
 
     window.fbq('init', this.PIXEL_ID);
     window.fbq('track', 'PageView');
-
-    console.log('[MetaPixel] Inizializzato con Pixel ID:', this.PIXEL_ID);
   }
 
   /** Traccia un evento standard (es. 'Purchase', 'Lead', 'ViewContent') */

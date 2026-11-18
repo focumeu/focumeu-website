@@ -1,53 +1,82 @@
 .faq-item {
-  border: 0.5px solid var(--color-sand);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 8px;
-}
+  border-bottom: 1.5px solid
+    color-mix(in srgb, var(--color-sand) 30%, transparent);
 
-.faq-question {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.25rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  font-size: 1.6rem;
-  color: var(--color-sand);
-  font-weight: 500;
-  gap: 12px;
-
-  &:hover {
-    background: var(--color-sand);
-    color: var(--color-chilli);
-    transition: 0.3s ease;
+  h3 {
+    font: inherit;
   }
-}
 
-.faq-icon {
-  font-size: 20px;
-  transition: transform 0.25s ease;
-  &.open {
-    transform: rotate(180deg);
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.4rem 0;
+    text-align: left;
+    font-family: var(--font-brand);
+    font-size: var(--fs-lg);
+    line-height: 1.25;
+    color: var(--color-sand);
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: var(--color-butter);
+    }
   }
-}
 
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition:
-    max-height 0.3s ease,
-    padding 0.3s ease;
-  padding: 0 1.25rem;
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: var(--color-sand);
+  // "+" che diventa "−"
+  &__icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 2px;
+      background: currentColor;
+      transform: translate(-50%, -50%);
+      transition: transform 0.35s var(--ease-out);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  // apertura fluida senza altezze fisse (grid 0fr → 1fr)
+  &__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s var(--ease-out);
+  }
+
+  &__inner {
+    overflow: hidden;
+
+    p {
+      max-width: 62ch;
+      padding-bottom: 1.5rem;
+      color: color-mix(in srgb, var(--color-sand) 90%, transparent);
+      text-wrap: pretty;
+    }
+  }
 
   &.open {
-    max-height: 300px;
-    padding: 0.75rem 1.25rem 1rem;
+    .faq-item__panel {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-item__icon::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
   }
 }

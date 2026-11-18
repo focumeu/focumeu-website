@@ -2,33 +2,69 @@
 <html lang="it">
   <head>
     <meta charset="utf-8" />
-    <title>Focumeu - Ristorante e Bar</title>
+    <title>Focu Meu – Ristorante & Bar</title>
     <meta
       name="description"
-      content="Focu Meu è un ristorante di pesce e cocktail bar sul mare a Sant'Andrea Apostolo dello Ionio. Cucina di mare, pescato fresco, aperitivi e tramonti sulla costa ionica calabrese."
+      content="Cucina calabrese, brace e aperitivi sul mar Ionio a Sant'Andrea Apostolo dello Ionio. A pochi minuti da Soverato."
     />
-
-    <meta
-      property="og:title"
-      content="Focu Meu | Ristorante di Pesce e Cocktail Bar"
-    />
-
-    <meta
-      property="og:description"
-      content="Ristorante sul mare, cucina di pesce, cocktail e atmosfera mediterranea."
-    />
-
-    <meta property="og:image" content="https://focu-meu.it/logo_fm.webp" />
-    <meta property="og:url" content="https://focu-meu.it" />
-    <meta property="og:type" content="website" />
     <base href="/" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1"
-      viewport-fit="cover"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <link rel="canonical" href="https://focu-meu.it" />
+    <meta name="theme-color" content="#d24b1b" />
+
+    <!-- Open Graph / anteprime social -->
+    <meta property="og:site_name" content="Focu Meu" />
+    <meta
+      property="og:title"
+      content="Focu Meu – Dall'Alba al Tramonto sulla Costa Ionica"
+    />
+    <meta
+      property="og:description"
+      content="Cucina calabrese, cocktail e brace sul mare Ionio. A Sant'Andrea Apostolo dello Ionio, pochi minuti da Soverato."
+    />
+    <meta property="og:image" content="https://focu-meu.it/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="La terrazza di Focu Meu affacciata sul mare Ionio"
+    />
+    <meta property="og:url" content="https://focu-meu.it/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="canonical" href="https://focu-meu.it/" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Immagine hero: scaricata subito (è l'elemento più grande della pagina).
+         Due preload alternativi, uguali alle sorgenti del <picture> della hero. -->
+    <link
+      rel="preload"
+      as="image"
+      media="(max-aspect-ratio: 4/5)"
+      imagesrcset="
+        /assets/images/sala-portrait-600.webp 600w,
+        /assets/images/sala-portrait-840.webp 840w
+      "
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      media="(min-aspect-ratio: 4001/5000)"
+      imagesrcset="
+        /assets/images/sala-640.webp   640w,
+        /assets/images/sala-1024.webp 1024w,
+        /assets/images/sala-1440.webp 1440w,
+        /assets/images/sala.webp      1971w
+      "
+      imagesizes="(max-aspect-ratio: 3/2) 150vh, 100vw"
+      fetchpriority="high"
+    />
     <link
       rel="preload"
       href="/assets/fonts/Ribes-Regular.woff2"
@@ -36,36 +72,20 @@
       type="font/woff2"
       crossorigin
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Staatliches&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/assets/fonts/ZalandoSans-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-K9N7MGX65D"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-K9N7MGX65D");
-    </script>
+    <!--
+      Google Analytics e Meta Pixel NON vengono caricati qui:
+      vengono iniettati da AnalyticsService / MetaPixelService
+      solo dopo il consenso dell'utente (banner cookie).
+    -->
   </head>
   <body>
     <app-root></app-root>
-    <!-- FIXATO: spostato il noscript dentro il body -->
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display: none"
-        src="https://www.facebook.com/tr?id=1000236275709997&ev=PageView&noscript=1"
-      />
-    </noscript>
   </body>
 </html>

@@ -28,11 +28,24 @@
               }
             ],
             "styles": ["src/styles.scss"],
+            "server": "src/main.server.ts",
             "outputMode": "static"
           },
           "configurations": {
             "production": {
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "12kB",
+                  "maximumError": "24kB"
+                }
+              ]
             },
             "development": {
               "optimization": false,

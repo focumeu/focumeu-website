@@ -1,47 +1,23 @@
-<section id="experience">
-  <h1 class="title">{{'EXPERIENCE.TITLE' | translate}}</h1>
+<section id="experience" class="experience">
+  <div class="container">
+    <header class="experience__head">
+      <p class="eyebrow" appReveal>{{ 'EXPERIENCE.EYEBROW' | translate }}</p>
+      <h2 class="section-title" appReveal>{{ 'EXPERIENCE.TITLE' | translate }}</h2>
+    </header>
 
-  <div class="services">
-    <div class="bar">
-      <img
-        src="/assets/illustrations/aperol_sand.webp"
-        alt="Aperol doodle illustration"
-        loading="lazy"
-      />
-      <div class="texts">
-        <h4>{{'EXPERIENCE.SUBTITLE1' | translate}}</h4>
-        <p>{{'EXPERIENCE.TEXT1' | translate}}</p>
-      </div>
-    </div>
-    <div class="restaurant">
-      <img
-        src="/assets/illustrations/pepper_sand.webp"
-        alt="Man with pepper doodle illustration"
-        loading="lazy"
-      />
-      <div class="texts">
-        <h4>{{'EXPERIENCE.SUBTITLE2' | translate}}</h4>
-        <p>{{'EXPERIENCE.TEXT2' | translate}}</p>
-      </div>
-    </div>
-    <div class="atmosphere">
-      <img
-        src="/assets/illustrations/sun_sand.webp"
-        alt="Sun doodle illustration"
-        loading="lazy"
-      />
-
-      <div class="texts">
-        <h4>{{'EXPERIENCE.SUBTITLE3' | translate}}</h4>
-        <p>{{'EXPERIENCE.TEXT3' | translate}}</p>
-      </div>
-    </div>
+    <ul class="experience__list">
+      @for (item of items; track item.title; let i = $index) {
+      <li class="card" appReveal [revealDelay]="i * 120">
+        <span class="card__num">0{{ i + 1 }}</span>
+        <span
+          class="illo card__illo"
+          [style.--illo]="'url(' + item.illo + ')'"
+          aria-hidden="true"
+        ></span>
+        <h3 class="card__title">{{ item.title | translate }}</h3>
+        <p class="card__text">{{ item.text | translate }}</p>
+      </li>
+      }
+    </ul>
   </div>
-
-  <img
-    src="/assets/illustrations/wave.webp"
-    alt="background wave illustraion"
-    loading="lazy"
-    class="wave"
-  />
 </section>

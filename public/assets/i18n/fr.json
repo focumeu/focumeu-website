@@ -5,17 +5,34 @@
     "EXPERIENCE": "Expérience",
     "MOMENTS": "Moments",
     "FAQ": "FAQ",
-    "CONTACT": "Contact"
+    "CONTACT": "Contact",
+    "BOOK": "Réserver",
+    "OPEN-MENU": "Ouvrir le menu",
+    "CLOSE-MENU": "Fermer le menu",
+    "LANGUAGE": "Langue",
+    "MAIN": "Navigation principale"
   },
   "HERO": {
+    "H1": "Focu Meu – Restaurant, grillades et bar à cocktails en bord de mer à Sant'Andrea Apostolo dello Ionio, Calabre",
     "BOOKING-BTN": "Réserver",
     "LOCATION-BTN": "Emplacement",
     "PAYOFF": "De l'Aube au Coucher du Soleil",
     "SEASON-CLOSED": {
       "TITLE": "Merci d’avoir partagé cette saison avec nous!",
       "MESSAGE": "La saison estivale de Focu Meu s’achève ici. Un grand merci à tous ceux qui nous ont choisis, qui sont venus nous rendre visite et qui ont partagé cet été avec nous.",
-      "SOCIAL-TEXT": "Nous faisons une petite pause, mais nous continuerons à vous raconter ce qui se prépare. Suivez-nous sur les réseaux sociaux pour rester informés de la prochaine saison."
-    }
+      "SOCIAL-TEXT": "Nous faisons une petite pause, mais nous continuerons à vous raconter ce qui se prépare. Suivez-nous sur les réseaux sociaux pour rester informés de la prochaine saison.",
+      "EYEBROW": "Saison 2026 terminée",
+      "CTA-IG": "Suivez-nous sur Instagram",
+      "CTA-FB": "Facebook"
+    },
+    "IN-SEASON": {
+      "EYEBROW": "Sant'Andrea Apostolo dello Ionio · Calabre",
+      "SUBTITLE": "Cuisine calabraise au feu de bois, cocktails et couchers de soleil sur la mer Ionienne. Du petit-déjeuner jusque tard dans la nuit.",
+      "WHATSAPP": "WhatsApp",
+      "DIRECTIONS": "Itinéraire",
+      "OPEN": "Ouvert tous les jours"
+    },
+    "SCROLL": "Défiler"
   },
   "STORY": {
     "TITLE": "Notre Histoire",
@@ -24,7 +41,9 @@
     "TEXT2": "Focu Meu est né ici. À Sant'Andrea Apostolo dello Ionio, au cœur de la Calabre.",
     "TEXT3": "Un restaurant et lido contemporain qui raconte la Calabre à travers le feu, la cuisine et le rythme de la côte. Une cuisine ancrée dans la tradition calabraise - grill au bois, produits saisonniers, saveurs intenses du territoire - réinterprétée avec sensibilité, sans jamais perdre son âme.",
     "TEXT4": "Les hôtes arrivent pour manger. Ils restent pour le reste.",
-    "TEXT5": "Le feu est allumé. Un endroit où l'on revient, sur la côte ionienne, Calabre."
+    "TEXT5": "Le feu est allumé. Un endroit où l'on revient, sur la côte ionienne, Calabre.",
+    "IMAGE-ALT": "Table dressée sur la terrasse de Focu Meu",
+    "IMAGE2-ALT": "L'enseigne de Focu Meu face à la mer"
   },
   "EXPERIENCE": {
     "TITLE": "L'Expérience",
@@ -33,12 +52,23 @@
     "SUBTITLE2": "Restaurant",
     "TEXT2": "Cuisine calabraise contemporaine : grill au bois, produits saisonniers et ingrédients du Sud de l'Italie. La tradition, réinterprétée.",
     "SUBTITLE3": "Atmosphère",
-    "TEXT3": "Musique, feu et hospitalité côtière. Une expérience de partage sur la côte ionienne de Calabre."
+    "TEXT3": "Musique, feu et hospitalité côtière. Une expérience de partage sur la côte ionienne de Calabre.",
+    "EYEBROW": "Ce qui vous attend"
   },
   "MOMENTS": {
     "TITLE": "Moments",
     "ALLERGENS-SUBTITLE": "Allergènes",
-    "ALLERGENS-TEXT": "Pour toute information concernant les allergènes et les intolérances alimentaires, nous invitons nos clients à s'adresser au personnel de salle avant de passer leur commande, conformément au Règlement UE n° 1169/2011."
+    "ALLERGENS-TEXT": "Pour toute information concernant les allergènes et les intolérances alimentaires, nous invitons nos clients à s'adresser au personnel de salle avant de passer leur commande, conformément au Règlement UE n° 1169/2011.",
+    "EYEBROW": "Instants de saison",
+    "INTRO": "Quelques clichés de notre été sur la mer Ionienne. Le reste, à découvrir sur place.",
+    "SWIPE": "Faites défiler pour voir d'autres photos",
+    "CAPTIONS": {
+      "BAR": "Spritz au comptoir",
+      "INSEGNA": "L'entrée",
+      "SPECCHIO": "Détails",
+      "PIATTI": "Art de la table",
+      "LOUNGE": "Le lounge"
+    }
   },
   "FAQ": {
     "TITLE": "FAQ",
@@ -57,7 +87,11 @@
     "QUESTION7": "Focu Meu propose-t-il un brunch?",
     "ANSWER7": "Oui. Focu Meu propose un brunch face à la mer pendant la saison estivale, sur la côte ionienne de Calabre. La réservation est conseillée.",
     "QUESTION8": "Est-il possible de consulter le menu ?",
-    "ANSWER8": "Notre cuisine suit le rythme de la mer. Comme nous travaillons avec la pêche du jour et des produits frais, notre carte évolue fréquemment. C'est pourquoi nous avons choisi de ne pas publier de menu fixe sur notre site. Nous serons ravis de vous faire découvrir les suggestions du jour chez Focu Meu."
+    "ANSWER8": "Notre cuisine suit le rythme de la mer. Comme nous travaillons avec la pêche du jour et des produits frais, notre carte évolue fréquemment. C'est pourquoi nous avons choisi de ne pas publier de menu fixe sur notre site. Nous serons ravis de vous faire découvrir les suggestions du jour chez Focu Meu.",
+    "EYEBROW": "Questions fréquentes",
+    "INTRO": "Tout ce qu’il faut savoir avant de venir nous voir.",
+    "MORE": "Vous ne trouvez pas la réponse ?",
+    "MORE-CTA": "Écrivez-nous sur WhatsApp"
   },
   "CONTACTS": {
     "TITLE": "Venez Nous Trouver",
@@ -75,12 +109,24 @@
     "APERITIF": "Apéritif",
     "DINNER": "Dîner",
     "SCHEDULE1": "Du lundi au dimanche",
-    "SCHEDULE2": "De 8h jusqu’à tard dans la nuit"
+    "SCHEDULE2": "De 8h jusqu’à tard dans la nuit",
+    "EYEBROW": "Où nous trouver",
+    "DIRECTIONS": "Itinéraire",
+    "CALL": "Appeler",
+    "WHATSAPP": "WhatsApp",
+    "MAP-LOAD": "Afficher la carte",
+    "MAP-NOTE": "La carte est fournie par Google Maps : en la chargeant, vous acceptez les cookies de Google.",
+    "MAP-OPEN": "Ouvrir dans Google Maps",
+    "MAP-TITLE": "Carte : comment rejoindre Focu Meu"
   },
   "FOOTER": {
     "TEXT": "Réservez votre table et vivez l'été sur la côte ionienne de Calabre.",
     "RIGHTS": "Tous droits réservés",
-    "COOKIE-LINK": "Gérer les préférences relatives aux cookies"
+    "COOKIE-LINK": "Gérer les préférences relatives aux cookies",
+    "EXPLORE": "Explorer",
+    "CONTACT": "Contact",
+    "FOLLOW": "Suivez-nous",
+    "BACK-TOP": "Haut de page"
   },
   "SEO": {
     "TITLE": "Focu Meu – Restaurant & Bar",

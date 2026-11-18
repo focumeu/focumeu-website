@@ -10,6 +10,9 @@ const OG_LOCALE_MAP: Record<string, string> = {
   // aggiungi qui altre lingue: de: 'de_DE', ecc.
 };
 
+const SITE_URL = 'https://focu-meu.it';
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
 @Injectable({ providedIn: 'root' })
 export class SeoService {
   private title = inject(Title);
@@ -26,8 +29,6 @@ export class SeoService {
 
   /** Chiama questo ad ogni cambio lingua */
   updateForCurrentLang(): void {
-    const lang = this.translate.currentLang() ?? 'it';
-
     this.translate
       .get([
         'SEO.TITLE',
@@ -37,6 +38,12 @@ export class SeoService {
         'SEO.OG_DESCRIPTION',
       ])
       .subscribe((t) => {
+        // lingua letta qui (non prima del get): le traduzioni si caricano in
+        // modo asincrono e una chiamata precedente non deve sovrascrivere la lingua attiva
+        const lang = this.translate.getCurrentLang() ?? 'it';
+        const pageUrl =
+          lang === 'it' ? `${SITE_URL}/` : `${SITE_URL}/?lang=${lang}`;
+
         this.title.setTitle(t['SEO.TITLE']);
 
         this.meta.updateTag({
@@ -57,16 +64,11 @@ export class SeoService {
           property: 'og:locale',
           content: OG_LOCALE_MAP[lang] ?? 'it_IT',
         });
-        this.meta.updateTag({ property: 'og:type', content: 'website' }); // ← fix: era 'restaurant', non valido
-        this.meta.updateTag({
-          property: 'og:url',
-          content: 'https://focu-meu.it',
-        });
-        this.meta.updateTag({
-          property: 'og:image',
-          content: 'https://focu-meu.it/assets/images/og-image.jpg',
-        });
+        this.meta.updateTag({ property: 'og:type', content: 'website' });
+        this.meta.updateTag({ property: 'og:url', content: pageUrl });
+        this.meta.updateTag({ property: 'og:image', content: OG_IMAGE });
 
+        this.setCanonical(pageUrl);
         this.document.documentElement.lang = lang;
       });
   }
@@ -74,9 +76,9 @@ export class SeoService {
   setHreflang(): void {
     const head = this.document.head;
     const langs = [
-      { lang: 'it', href: 'https://focu-meu.it' },
-      { lang: 'en', href: 'https://focu-meu.it?lang=en' },
-      { lang: 'fr', href: 'https://focu-meu.it?lang=fr' },
+      { lang: 'it', href: `${SITE_URL}/` },
+      { lang: 'en', href: `${SITE_URL}/?lang=en` },
+      { lang: 'fr', href: `${SITE_URL}/?lang=fr` },
     ];
 
     head.querySelectorAll('link[rel="alternate"]').forEach((el) => el.remove());
@@ -92,18 +94,35 @@ export class SeoService {
     const def = this.document.createElement('link');
     def.rel = 'alternate';
     def.setAttribute('hreflang', 'x-default');
-    def.href = 'https://focu-meu.it';
+    def.href = `${SITE_URL}/`;
     head.appendChild(def);
   }
 
+  /** Canonical coerente con la lingua attiva (evita contenuti duplicati). */
+  private setCanonical(url: string): void {
+    let link = this.document.head.querySelector<HTMLLinkElement>(
+      'link[rel="canonical"]',
+    );
+    if (!link) {
+      link = this.document.createElement('link');
+      link.rel = 'canonical';
+      this.document.head.appendChild(link);
+    }
+    link.href = url;
+  }
+
   injectRestaurantSchema(): void {
+    // NB: gli orari di apertura NON sono dichiarati qui perché il locale è
+    // stagionale: la fonte ufficiale degli orari è la scheda Google Business.
     const schema = {
       '@context': 'https://schema.org',
       '@type': 'Restaurant',
       name: 'Focu Meu',
-      image: 'https://focu-meu.it/assets/images/restaurant_placeholder.jpg',
-      url: 'https://focu-meu.it',
+      image: OG_IMAGE,
+      logo: `${SITE_URL}/logo_fm.webp`,
+      url: `${SITE_URL}/`,
       telephone: '+393516372505',
+      email: 'info.focumeu@gmail.com',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Via Raffaele Lombardi, 20',
@@ -117,28 +136,13 @@ export class SeoService {
         latitude: 38.612389,
         longitude: 16.5625641,
       },
+      hasMap: 'https://www.google.com/maps/place/Focu+Meu/@38.612389,16.5625641,17z',
       servesCuisine: ['Calabrese', 'Italiana', 'Seafood', 'Griglia', 'Brace'],
       priceRange: '€€',
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: [
-            'Monday',
-            'Tuesday',
-            'Wednesday',
-            'Thursday',
-            'Friday',
-            'Saturday',
-            'Sunday',
-          ],
-          opens: '08:00',
-          closes: '02:00',
-        },
-      ],
+      acceptsReservations: true,
       sameAs: [
         'https://www.instagram.com/focumeu_it',
         'https://www.facebook.com/profile.php?id=61573220798900',
-        'https://www.google.com/maps/place/Focu+Meu/@38.612389,16.5625641',
       ],
     };
 

@@ -1,182 +1,190 @@
-#story {
-  height: 100dvh;
-  background-color: var(--color-sand);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  position: relative;
-  overflow: hidden;
-  padding: 4rem;
+.story {
+  padding-block: var(--section-y);
+  background: var(--color-sand);
+  --wave-opacity: 0.07;
 
-  .wave {
-    width: 2400px;
-    height: auto;
-    position: absolute;
-    z-index: 1;
-    opacity: 0.1;
-    animation: wave-motion 20s infinite;
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: center;
   }
 
-  .texts {
-    width: 50%;
-    height: 100%;
-    z-index: 2;
+  // ── Testo ──
+  &__text {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1.5rem;
+    max-width: 60ch;
 
-    h1 {
-      font-family: "Ribes Black", sans-serif;
-      color: var(--color-orange);
-      font-size: 4.5rem;
-      text-transform: uppercase;
+    .eyebrow {
+      color: var(--color-chilli);
     }
 
-    .description {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      flex: 1;
-      gap: 2.5rem;
-
-      h4 {
-        font-family: "Staatliches", sans-serif;
-        font-size: 2rem;
-        font-weight: 400;
-        color: var(--color-chilli);
-        text-transform: uppercase;
-      }
-
-      p {
-        font-family: "Zalando Sans", sans-serif;
-        font-weight: 400;
-        font-size: 1.1rem;
-        text-align: justify;
-        line-height: 1.5;
-        color: var(--color-chilli);
-      }
+    .section-title {
+      color: var(--color-chilli);
+      margin-bottom: 0.5rem;
     }
   }
 
-  .images {
-    z-index: 2;
-    width: 50%;
-    height: 100%;
+  &__lead {
+    font-size: var(--fs-lg);
+    line-height: 1.45;
+    color: var(--text);
+    text-wrap: pretty;
+  }
+
+  &__body {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(2deg);
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--text-muted);
+    text-wrap: pretty;
+  }
+
+  &__quote {
+    position: relative;
+    margin-top: 0.5rem;
+    padding: 1.4rem 0 1.4rem 1.5rem;
+    border-left: 3px solid var(--color-orange);
+
+    p {
+      font-family: var(--font-brand);
+      font-size: var(--fs-xl);
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: var(--color-chilli);
+      text-wrap: balance;
+    }
+  }
+
+  &__sign {
+    font-family: var(--font-label);
+    font-size: var(--fs-md);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-chilli);
+  }
+
+  // ── Foto stile polaroid ──
+  &__media {
+    position: relative;
+    padding: 0 8% 18% 0;
+  }
+
+  &__photo {
+    margin: 0;
 
     img {
-      width: 80%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-
-      padding: 24px 24px 80px 24px; // effetto polaroid
-      background: white;
-
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  // ── Tablet (≤1024px) ──────────────────────────────────────────────────────
-
-  @media (max-width: 1024px) {
-    height: auto;
-    flex-direction: column;
-    padding: 4rem 2.5rem;
-    gap: 3rem;
-
-    .texts {
       width: 100%;
       height: auto;
-      gap: 2rem;
-
-      h1 {
-        font-size: 3.5rem;
-      }
-
-      .description {
-        gap: 1.5rem;
-        justify-content: flex-start;
-
-        h4 {
-          font-size: 1.75rem;
-        }
-        p {
-          font-size: 1rem;
-        }
-      }
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
     }
 
-    .images {
-      width: 100%;
-      transform: none;
+    &--main {
+      transform: rotate(2deg);
+    }
+
+    &--small {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 52%;
+      transform: rotate(-5deg);
 
       img {
-        width: 100%;
-        max-width: 800px;
-        aspect-ratio: 16 / 9;
-        height: auto;
-
-        padding: 0;
-        background: none;
-        outline: none;
-
-        object-fit: cover;
+        aspect-ratio: 1;
       }
     }
   }
 
-  // ── Mobile (≤600px) ───────────────────────────────────────────────────────
+  // ── Timbro rotante ──
+  &__badge {
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    z-index: 2;
+    width: clamp(110px, 11vw, 150px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-chilli);
+    color: var(--color-sand);
+    box-shadow: var(--shadow-soft);
+    display: grid;
+    place-items: center;
+  }
 
-  @media (max-width: 600px) {
-    padding: 3rem 1.25rem;
-    gap: 2rem;
+  &__badge-text {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: badge-spin 28s linear infinite;
 
-    .wave {
-      width: 1800px;
+    text {
+      font-family: var(--font-label);
+      font-size: 17px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      fill: currentColor;
+    }
+  }
+
+  &__badge-sun {
+    width: 38%;
+    aspect-ratio: 1;
+    --illo-color: var(--color-butter);
+  }
+
+  &__illo {
+    position: absolute;
+    left: -6%;
+    bottom: 2%;
+    width: 34%;
+    aspect-ratio: 886 / 664;
+    --illo-color: var(--color-chilli);
+    transform: rotate(-8deg);
+  }
+
+  // ── Tablet / mobile ──
+  @media (max-width: 1024px) {
+    &__grid {
+      grid-template-columns: 1fr;
     }
 
-    .texts {
-      gap: 1.5rem;
-
-      h1 {
-        font-size: clamp(2.4rem, 8vw, 3.2rem);
-      }
-
-      .description {
-        gap: 1rem;
-
-        h4 {
-          font-size: clamp(1.3rem, 4.5vw, 1.6rem);
-        }
-        p {
-          font-size: clamp(0.9rem, 3.2vw, 1rem);
-          text-align: left;
-        }
-      }
+    &__text {
+      max-width: 68ch;
     }
 
-    .images {
-      img {
-        aspect-ratio: 16 / 10;
-        width: 100%;
-      }
+    &__media {
+      max-width: 560px;
+      width: 100%;
+      margin-inline: auto;
+      padding: 0 12% 22% 0;
+    }
+
+    &__illo {
+      left: 0;
+      width: 30%;
+    }
+
+    &__badge {
+      top: -1.75rem;
+      right: 2%;
+      width: 96px;
     }
   }
 }
 
-@keyframes wave-motion {
-  0% {
-    transform: translate(0, 0);
+@keyframes badge-spin {
+  to {
+    transform: rotate(360deg);
   }
-  50% {
-    transform: translate(10px, 80px);
-  }
-  100% {
-    transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story__badge-text {
+    animation: none;
   }
 }

@@ -1,316 +1,303 @@
-$breakpoint-tablet: 1024px;
+// ═══════════════════════════════════════════════════════════════════
+//  NAVBAR — trasparente sulla hero, sabbia con blur dopo lo scroll,
+//  si nasconde scorrendo in giù e riappare scorrendo in su.
+// ═══════════════════════════════════════════════════════════════════
+
+$bp-menu: 1024px;
 
 .navbar {
-  background-color: var(--color-sand);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  position: relative;
-  z-index: 1000;
-  padding-top: calc(2rem + env(safe-area-inset-top));
-
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto 0;
+  z-index: 1000;
+  padding-top: env(safe-area-inset-top);
+  color: var(--color-sand);
   transition:
     background-color 0.4s ease,
-    box-shadow 0.4s ease;
+    color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.45s var(--ease-out);
 
-  .logo {
-    max-width: 250px;
-    height: auto;
-    position: relative;
-    z-index: 1001; // sopra l'overlay
-  }
-
-  // Desktop nav links
-  .navlinks {
+  &__inner {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-
-    .navlink {
-      background: transparent;
-      border: none;
-      appearance: none;
-      -webkit-appearance: none;
-      touch-action: manipulation;
-
-      font-family: "Ribes Black", sans-serif;
-      font-size: 1.5rem;
-      text-decoration: none;
-      color: var(--color-orange);
-      cursor: pointer;
-
-      &:hover {
-        color: var(--color-chilli);
-        transition: 0.2s ease;
-      }
-    }
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1440px;
+    margin-inline: auto;
+    height: var(--nav-h);
+    padding-inline: var(--gutter);
   }
 
-  // Language switcher
-  .lang-switcher {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-
-    button {
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-
-      &.active {
-        img {
-          outline: 2px solid var(--color-chilli);
-          border-radius: 2px;
-        }
-      }
-    }
-  }
-
-  // Hamburger button
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
+  &__logo {
+    flex-shrink: 0;
     position: relative;
-    z-index: 1001;
+    z-index: 2;
 
-    span {
-      display: block;
-      width: 30px;
-      height: 3px;
-      background-color: var(--color-orange);
-      border-radius: 2px;
-      transform-origin: center;
-      transition:
-        transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-        opacity 0.2s ease,
-        background-color 0.2s ease;
+    img {
+      width: clamp(118px, 9vw, 150px);
+      height: auto;
     }
   }
 
-  // Hamburger animato → X quando menu aperto
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: clamp(1.25rem, 2.2vw, 2.5rem);
+  }
+
+  &__link {
+    position: relative;
+    font-family: var(--font-label);
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-block: 0.4rem;
+
+    // sottolineatura animata
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.35s var(--ease-out);
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__cta {
+    min-height: 42px;
+    padding: 0.6rem 1.3rem;
+    font-size: 0.95rem;
+  }
+
+  // ── Stato pieno (dopo lo scroll) ──
+  &.is-solid {
+    background-color: color-mix(in srgb, var(--color-sand) 88%, transparent);
+    backdrop-filter: blur(14px) saturate(1.4);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    color: var(--color-chilli);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--color-chilli) 14%, transparent);
+  }
+
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
+
   &.menu-open {
-    .hamburger {
-      span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-        background-color: var(--color-chilli);
-      }
-      span:nth-child(2) {
-        opacity: 0;
-        transform: scaleX(0);
-      }
-      span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-        background-color: var(--color-chilli);
-      }
-    }
-  }
-
-  // Utility classi visibilità
-  .desktop-only {
-    display: flex;
-  }
-
-  &.transparent {
     background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    color: var(--color-sand);
 
-    .navlinks {
-      .navlink {
-        color: var(--color-butter);
-
-        &:hover {
-          color: var(--color-chilli);
-        }
-      }
-    }
-
-    .hamburger span {
-      background-color: var(--color-butter);
-    }
-  }
-
-  // Ombra leggera quando opaca
-  &:not(.transparent) {
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    .logo {
-      max-width: 200px;
-    }
-    .desktop-only {
-      display: none !important;
-    }
-
-    .hamburger {
-      display: flex;
+    .navbar__cta {
+      opacity: 0;
+      pointer-events: none;
     }
   }
 }
 
-// ─── Fullscreen overlay menu ───────────────────────────────────────────────
-
-.fullscreen-menu {
-  position: fixed;
-  inset: 0;
-  background-color: var(--color-sand);
-  z-index: 999;
+// ── Selettore lingua testuale (IT · EN · FR) ──
+.lang-switcher {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100dvw;
-  height: 100dvh;
+  gap: 0.15rem;
 
-  // stato iniziale: nascosto
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateY(-12px);
-  transition:
-    opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-    transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-    visibility 0s linear 0.35s;
+  button {
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0.2rem 0.35rem;
+    font-family: var(--font-label);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    border-radius: 6px;
+    transition: opacity 0.2s ease;
 
-  &.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transform: translateY(0);
-    transition:
-      opacity 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-      transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-      visibility 0s linear 0s;
-
-    // Animazione a cascata per i link
-    .fullscreen-link {
-      background: transparent;
-      border: none;
-      appearance: none;
-      -webkit-appearance: none;
-      touch-action: manipulation;
-
-      @for $i from 1 through 6 {
-        &:nth-child(#{$i}) {
-          opacity: 1;
-          transform: translateY(0);
-          transition-delay: #{0.05s * $i};
-        }
-      }
-    }
-
-    .booking-btn {
-      font-family: "Ribes", sans-serif;
-      font-size: 1.8rem;
-      font-weight: bold;
-      background-color: var(--color-chilli);
-      border: none;
-      padding: 0.4rem 1rem;
-      border-radius: 16px;
-
-      a {
-        text-decoration: none;
-        color: var(--color-sand);
-      }
-    }
-
-    .mobile-lang {
+    &:hover {
       opacity: 1;
-      transform: translateY(0);
-      transition-delay: 0.38s;
+    }
+
+    &.active {
+      opacity: 1;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      text-decoration-thickness: 2px;
     }
   }
 
-  &__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-    width: 100%;
-    padding: 6rem 2rem 3rem;
+  &--large button {
+    font-size: 1.3rem;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+// ── Hamburger (2 linee → X) ──
+.hamburger {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+
+  span {
+    position: absolute;
+    left: 9px;
+    right: 9px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.4s var(--ease-out);
+
+    &:nth-child(1) {
+      top: 17px;
+    }
+    &:nth-child(2) {
+      top: 25px;
+    }
+  }
+
+  .menu-open & span {
+    &:nth-child(1) {
+      transform: translateY(4px) rotate(45deg);
+    }
+    &:nth-child(2) {
+      transform: translateY(-4px) rotate(-45deg);
+    }
+  }
+}
+
+@media (max-width: $bp-menu) {
+  .navbar__links,
+  .navbar__actions > .lang-switcher {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__cta {
+    display: none;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  MENU MOBILE A SCHERMO INTERO
+// ═══════════════════════════════════════════════════════════════════
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(var(--nav-h) + env(safe-area-inset-top) + 1.5rem) var(--gutter)
+    calc(2rem + env(safe-area-inset-bottom));
+  background: var(--color-chilli);
+  color: var(--color-sand);
+  overflow-y: auto;
+
+  clip-path: circle(0% at calc(100% - 44px) 42px);
+  visibility: hidden;
+  transition:
+    clip-path 0.6s var(--ease-out),
+    visibility 0s linear 0.6s;
+
+  &.open {
+    clip-path: circle(150% at calc(100% - 44px) 42px);
+    visibility: visible;
+    transition:
+      clip-path 0.7s var(--ease-out),
+      visibility 0s;
   }
 
   &__links {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    width: 100%;
+    gap: 0.4rem;
   }
 
-  .fullscreen-link {
-    font-family: "Ribes Black", sans-serif;
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    text-decoration: none;
-    color: var(--color-orange);
-    cursor: pointer;
-    letter-spacing: 0.02em;
-    line-height: 1;
-
-    // stato iniziale per animazione entrata
-    opacity: 0;
-    transform: translateY(16px);
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease,
-      color 0.2s ease;
-
-    &:hover,
-    &:active {
-      color: var(--color-chilli);
-    }
-  }
-
-  .mobile-lang {
+  &__link {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: baseline;
     gap: 1rem;
+    padding-block: 0.35rem;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 10vw, 3.6rem);
+    line-height: 1;
+    text-transform: uppercase;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-sand) 22%, transparent);
 
-    // stato iniziale per animazione entrata
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(24px);
     transition:
-      opacity 0.3s ease 0s,
-      transform 0.3s ease 0s;
+      opacity 0.5s var(--ease-out),
+      transform 0.5s var(--ease-out);
 
-    button {
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-      padding: 4px;
-      border-radius: 4px;
-      transition: transform 0.2s ease;
+    .open & {
+      opacity: 1;
+      transform: none;
+      transition-delay: calc(0.15s + var(--i) * 0.06s);
+    }
 
-      &:hover {
-        transform: scale(1.15);
-      }
-
-      &.active {
-        img {
-          outline: 2px solid var(--color-chilli);
-          border-radius: 2px;
-        }
-      }
+    &:active {
+      color: var(--color-butter);
     }
   }
 
-  // Mostrare solo su tablet e mobile
+  &__num {
+    font-family: var(--font-label);
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    color: var(--color-butter);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1.25rem;
+
+    a {
+      font-family: var(--font-label);
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+
   @media (min-width: 1025px) {
-    display: none !important;
+    display: none;
   }
 }
